@@ -1,0 +1,123 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md",
+   "AI_POLICY.md",
+   "CONTRIBUTING.md",
+   "CONTRIBUTORS.md",
+   "FAQ.md",
+   "README.cn.md",
+   "README.de-ch.md",
+   "README.de.md",
+   "README.es.md",
+   "README.fa.md",
+   "README.fr.md",
+   "README.hi.md",
+   "README.id.md",
+   "README.it.md",
+   "README.ja.md",
+   "README.kr.md",
+   "README.pl.md",
+   "README.pt-br.md",
+   "README.ru.md",
+   "README.sv.md",
+   "README.tr.md",
+   "README.zh-tw.md",
+   "SECURITY.md"
+  ],
+  "claims": 100,
+  "verified": 100,
+  "findings": 3,
+  "by_severity": {
+   "note": 0,
+   "warning": 0,
+   "error": 3
+  },
+  "test_count_source": "static count of 63 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 2,
+    "verified": 2,
+    "findings": 2
+   },
+   "path": {
+    "claims": 21,
+    "verified": 21,
+    "findings": 0
+   },
+   "command": {
+    "claims": 67,
+    "verified": 67,
+    "findings": 1
+   },
+   "link": {
+    "claims": 10,
+    "verified": 10,
+    "findings": 0
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "command",
+   "file": "CONTRIBUTING.md",
+   "line": 105,
+   "claim": "pip install -r requirements.txt",
+   "claimed": "requirements file `requirements.txt` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed requirements file `requirements.txt` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "README.md",
+   "line": 42,
+   "claim": "Python 3.8 or later",
+   "claimed": "python 3.8+",
+   "actual": ">=3.9.0",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.9.0+",
+   "message": "Claimed python 3.8+; found >=3.9.0 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "README.tr.md",
+   "line": 42,
+   "claim": "Python 3.6.3",
+   "claimed": "python 3.6.3+",
+   "actual": ">=3.9.0",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.9.0+",
+   "message": "Claimed python 3.6.3+; found >=3.9.0 (pyproject.toml requires-python).",
+   "fixable": false
+  }
+ ]
+}

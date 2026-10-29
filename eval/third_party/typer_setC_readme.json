@@ -1,0 +1,231 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md"
+  ],
+  "claims": 17,
+  "verified": 17,
+  "findings": 13,
+  "by_severity": {
+   "note": 11,
+   "warning": 0,
+   "error": 2
+  },
+  "test_count_source": "static count of 213 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "path": {
+    "claims": 3,
+    "verified": 3,
+    "findings": 0
+   },
+   "command": {
+    "claims": 11,
+    "verified": 11,
+    "findings": 11
+   },
+   "link": {
+    "claims": 2,
+    "verified": 2,
+    "findings": 2
+   },
+   "license": {
+    "claims": 1,
+    "verified": 1,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "link",
+   "file": "README.md",
+   "line": 57,
+   "claim": "tutorial/install.md#activate-the-virtual-environment",
+   "claimed": "link to `tutorial/install.md`",
+   "actual": "no such file",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix or remove the link",
+   "message": "Claimed link to `tutorial/install.md`; found no such file (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "README.md",
+   "line": 59,
+   "claim": "tutorial/install.md",
+   "claimed": "link to `tutorial/install.md`",
+   "actual": "no such file",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix or remove the link",
+   "message": "Claimed link to `tutorial/install.md`; found no such file (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 142,
+   "claim": "python main.py",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 153,
+   "claim": "python main.py --help",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 165,
+   "claim": "python main.py Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 225,
+   "claim": "python main.py --help",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 258,
+   "claim": "python main.py hello --help",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 277,
+   "claim": "python main.py goodbye --help",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 302,
+   "claim": "python main.py hello Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 308,
+   "claim": "python main.py goodbye Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 314,
+   "claim": "python main.py goodbye --formal Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 321,
+   "claim": "python main.py Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 321,
+   "claim": "python main.py hello Camila",
+   "claimed": "script `main.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `main.py` exists; found missing (git ls-files).",
+   "fixable": false
+  }
+ ]
+}

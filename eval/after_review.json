@@ -89,7 +89,7 @@
  },
  "mcp-diagram-agent|README.md|103|path": {
   "verdict": "fp",
-  "note": "the reader's Claude Desktop config file"
+  "note": "the reader's desktop-app MCP config file"
  },
  "trade-arena|README.md|29|number-provenance": {
   "verdict": "fp",
@@ -144,8 +144,8 @@
   "note": "commands run inside the fin-lora repository"
  },
  "finarena|docs/DEPLOY.md|20|command": {
-  "verdict": "real",
-  "note": "cp .env.example .env, but the repo has no .env.example"
+  "verdict": "fp",
+  "note": ".env.example exists at the repo root; the first run resolved docs/ commands relative to docs/ (fixed after third-party set A)"
  },
  "orbitwatch|README.md|46|version": {
   "verdict": "real",

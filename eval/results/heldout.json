@@ -652,7 +652,7 @@
    "repo": "mcp-diagram-agent",
    "review": {
     "verdict": "fp",
-    "note": "the reader's Claude Desktop config file"
+    "note": "the reader's desktop-app MCP config file"
    }
   },
   {

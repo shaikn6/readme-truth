@@ -1,0 +1,310 @@
+{
+ "httpx|docs/advanced/clients.md|154|link|#client-instances": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "httpx|docs/advanced/clients.md|162|link|#merging-of-parameters": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "httpx|docs/advanced/clients.md|319|path|foo.png": {
+  "verdict": "fp",
+  "note": "example file names in a usage snippet"
+ },
+ "httpx|docs/advanced/clients.md|319|path|bar.png": {
+  "verdict": "fp",
+  "note": "example file names in a usage snippet"
+ },
+ "httpx|docs/advanced/proxies.md|29|link|#routing": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "httpx|docs/async.md|194|link|../advanced/transports#asgitransport": {
+  "verdict": "fp",
+  "note": "extensionless link resolved by the mkdocs site"
+ },
+ "httpx|docs/compatibility.md|200|link|advanced/clients.md#client-instances": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "httpx|docs/contributing.md|67|command|scripts/test": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|79|command|scripts/test tests/test_multipart.py": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|85|command|scripts/lint": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|91|command|scripts/check": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|101|command|scripts/docs": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|125|command|scripts/check": {
+  "verdict": "fp",
+  "note": "script exists at the repo root; commands in docs/ were resolved relative to docs/"
+ },
+ "httpx|docs/contributing.md|146|test-count|435 passed": {
+  "verdict": "fp",
+  "note": "output of a failing run used as an illustration"
+ },
+ "httpx|docs/environment_variables.md|18|link|advanced/proxies.md#http-proxying": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "httpx|docs/third_party_packages.md|19|link|advanced/authentication.md#customizing-authentication": {
+  "verdict": "real",
+  "note": "anchor has no matching heading in the target page"
+ },
+ "gin|docs/doc.md|1838|version|Go 1.6": {
+  "verdict": "fp",
+  "note": "feature-availability note about old Go versions, not a requirement"
+ },
+ "gin|docs/doc.md|2076|version|go 1.6": {
+  "verdict": "fp",
+  "note": "feature-availability note about old Go versions, not a requirement"
+ },
+ "gin|docs/doc.md|2393|version|Go 1.8": {
+  "verdict": "fp",
+  "note": "feature-availability note about old Go versions, not a requirement"
+ },
+ "gin|docs/doc.md|2396|version|go1.8": {
+  "verdict": "fp",
+  "note": "feature-availability note about old Go versions, not a requirement"
+ },
+ "gin|docs/doc.md|2458|version|go1.8+": {
+  "verdict": "fp",
+  "note": "feature-availability note about old Go versions, not a requirement"
+ },
+ "click|README.md|39|command|python hello.py --count=3": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file"
+ },
+ "starlette|README.md|112|path|example.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file"
+ },
+ "click|docs/standalone-apps.md|45|path|app.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file"
+ },
+ "starlette|docs/release-notes.md|52|contradiction|Python 3.10": {
+  "verdict": "fp",
+  "note": "release notes quote old Python versions"
+ },
+ "starlette|docs/release-notes.md|979|version|Python 3.6": {
+  "verdict": "fp",
+  "note": "release notes quote old Python versions"
+ },
+ "starlette|docs/release-notes.md|1095|version|Python 3.10": {
+  "verdict": "fp",
+  "note": "release notes quote old Python versions"
+ },
+ "pydantic|docs/api/standard_library_types.md|360|link|../concepts/serialization.md#field-plain-serializer": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/alias.md|410|link|../errors/usage_errors.md#validate-by-alias-and-name-false": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/models.md|874|link|data=data": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/serialization.md|28|link|#field-wrap-serializer": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/serialization.md|35|link|#model-wrap-serializer": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/validators.md|24|link|#model-after-validator": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/validators.md|728|link|#field-wrap-validator": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/concepts/validators.md|863|link|#field-before-validator": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/errors/validation_errors.md|697|link|../concepts/fields.md#default-factory-validated-data": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/integrations/mypy.md|27|link|../errors/usage_errors.md#model-field-missing-annotation": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/internals/resolving_annotations.md|235|link|#backwards-compatibility-logic": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "pydantic|docs/migration.md|169|link|api/functional_serializers.md#pydantic.functional_serializers.model_serializer": {
+  "verdict": "fp",
+  "note": "mkdocs attr_list or mkdocstrings anchor, or code parsed as a link"
+ },
+ "cli|docs/CONTRIBUTING.md|86|command|make v3approve": {
+  "verdict": "fp",
+  "note": "Makefile exists at the repo root"
+ },
+ "cli|docs/CONTRIBUTING.md|108|command|make docs": {
+  "verdict": "fp",
+  "note": "Makefile exists at the repo root"
+ },
+ "cli|docs/v1/examples/greet.md|11|path|greet.go": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file"
+ },
+ "cli|docs/v2/examples/greet.md|13|path|greet.go": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file"
+ },
+ "rich|README.md|42|version|Python 3.8 or later": {
+  "verdict": "real",
+  "note": "README says Python 3.8 or later; pyproject requires >=3.9.0"
+ },
+ "typer|README.md|57|link|tutorial/install.md#activate-the-virtual-environment": {
+  "verdict": "real",
+  "note": "tutorial/install.md is at docs/tutorial/install.md; the link 404s on GitHub"
+ },
+ "typer|README.md|59|link|tutorial/install.md": {
+  "verdict": "real",
+  "note": "tutorial/install.md is at docs/tutorial/install.md; the link 404s on GitHub"
+ },
+ "typer|README.md|142|command|python main.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|153|command|python main.py --help": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|165|command|python main.py Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|225|command|python main.py --help": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|258|command|python main.py hello --help": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|277|command|python main.py goodbye --help": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|302|command|python main.py hello Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|308|command|python main.py goodbye Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|314|command|python main.py goodbye --formal Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|321|command|python main.py Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|README.md|321|command|python main.py hello Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "black|docs/the_black_code_style/future_style.md|41|link|labels/fix-unnecessary-parens-indexed-assignment": {
+  "verdict": "fp",
+  "note": "Sphinx/MyST label reference, not a file link"
+ },
+ "rich|README.tr.md|42|version|Python 3.6.3": {
+  "verdict": "real",
+  "note": "translated README still says Python 3.6.3+; pyproject requires >=3.9.0"
+ },
+ "typer|docs/index.md|322|command|python main.py goodbye --formal Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/commands/callback.md|60|command|python main.py --verbose create Camila": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/commands/help.md|77|command|python main.py init --help": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/commands/help.md|196|command|python main.py crate": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/commands/index.md|118|command|python main.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/commands/one-or-multiple.md|107|command|python main.py create": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/first-steps.md|274|command|python main.py Camila --formal Guti\u00e9rrez": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/multiple-values/arguments-with-multiple-values.md|59|command|python main.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/multiple-values/options-with-multiple-values.md|69|command|python main.py --user Camila 50 yes": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/options/help.md|112|command|python main.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/options/version.md|106|command|python main.py --name Rick --version": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/parameter-types/bool.md|41|command|python main.py --no-force": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/parameter-types/bool.md|169|command|python main.py --demo": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/parameter-types/datetime.md|31|command|python main.py 1956-01-31T10:00:00": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/parameter-types/number.md|125|command|python main.py --verbose --verbose --verbose": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/progressbar.md|18|command|python main.py": {
+  "verdict": "fp",
+  "note": "the reader's own tutorial file main.py"
+ },
+ "typer|docs/tutorial/testing.md|5|path|app/main.py": {
+  "verdict": "fp",
+  "note": "hypothetical layout in a tutorial ('say you have app/main.py')"
+ },
+ "typer|docs/tutorial/testing.md|22|path|app/__init__.py": {
+  "verdict": "fp",
+  "note": "hypothetical layout in a tutorial ('say you have app/main.py')"
+ }
+}

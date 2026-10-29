@@ -1,0 +1,86 @@
+{
+ "rows": [
+  {
+   "repo": "llm-gateway",
+   "pytest": 424,
+   "static": 424,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "nvidia-nim-rag-techniques",
+   "pytest": 138,
+   "static": 138,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "on-device-llm-optimizer",
+   "pytest": 67,
+   "static": 67,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "event-impact-signals",
+   "pytest": 65,
+   "static": 65,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "exec-rl",
+   "pytest": 13,
+   "static": 13,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "finance-agent-crew",
+   "pytest": 333,
+   "static": 333,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "credit-arena",
+   "pytest": 13,
+   "static": 13,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "pytest": 494,
+   "static": 488,
+   "exact": false,
+   "lower_bound": true,
+   "agrees": true
+  },
+  {
+   "repo": "nano-finbert",
+   "pytest": 430,
+   "static": 430,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  },
+  {
+   "repo": "georisk-agent",
+   "pytest": 233,
+   "static": 233,
+   "exact": true,
+   "lower_bound": false,
+   "agrees": true
+  }
+ ],
+ "equal": 9,
+ "total": 10
+}

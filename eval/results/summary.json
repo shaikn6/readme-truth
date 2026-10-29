@@ -1,0 +1,151 @@
+{
+ "dev": {
+  "repos": 11,
+  "discrepancies": 39,
+  "in_scope": 10,
+  "detected": 10,
+  "recall_by_type": {
+   "command": "1/1",
+   "path": "1/1",
+   "test-count": "5/5",
+   "version": "3/3"
+  },
+  "misses": [],
+  "after_claims": 464,
+  "after_fp": 1,
+  "after_fp_warning_or_error": 0,
+  "after_fp_rate_percent": 0.22,
+  "after_real": 7,
+  "after_by_severity": {
+   "error/real": 2,
+   "note/fp": 1,
+   "note/real": 3,
+   "warning/real": 2
+  }
+ },
+ "heldout_first_run": {
+  "repos": 11,
+  "discrepancies": 37,
+  "in_scope": 4,
+  "detected": 2,
+  "recall_by_type": {
+   "number-provenance": "0/1",
+   "path": "0/1",
+   "test-count": "2/2"
+  },
+  "misses": [
+   "gr-2",
+   "ow-1"
+  ],
+  "after_claims": 981,
+  "after_fp": 30,
+  "after_fp_warning_or_error": 8,
+  "after_fp_rate_percent": 3.06,
+  "after_real": 9,
+  "after_by_severity": {
+   "error/fp": 5,
+   "error/real": 4,
+   "note/fp": 22,
+   "note/real": 3,
+   "warning/fp": 3,
+   "warning/real": 2
+  }
+ },
+ "heldout": {
+  "repos": 11,
+  "discrepancies": 37,
+  "in_scope": 4,
+  "detected": 2,
+  "recall_by_type": {
+   "number-provenance": "0/1",
+   "path": "0/1",
+   "test-count": "2/2"
+  },
+  "misses": [
+   "gr-2",
+   "ow-1"
+  ],
+  "after_claims": 970,
+  "after_fp": 12,
+  "after_fp_warning_or_error": 0,
+  "after_fp_rate_percent": 1.24,
+  "after_real": 9,
+  "after_by_severity": {
+   "error/real": 4,
+   "note/fp": 12,
+   "note/real": 3,
+   "warning/real": 2
+  }
+ },
+ "third_party": {
+  "A_docs_first_run": {
+   "read": 21,
+   "real": 6,
+   "fp": 15,
+   "by_severity": {
+    "error/fp": 13,
+    "note/fp": 2,
+    "warning/real": 6
+   }
+  },
+  "B_readme": {
+   "read": 2,
+   "real": 0,
+   "fp": 2,
+   "by_severity": {
+    "note/fp": 2
+   }
+  },
+  "B_docs_sample": {
+   "read": 20,
+   "real": 0,
+   "fp": 20,
+   "by_severity": {
+    "error/fp": 5,
+    "note/fp": 3,
+    "warning/fp": 12
+   }
+  },
+  "C_readme": {
+   "read": 14,
+   "real": 3,
+   "fp": 11,
+   "by_severity": {
+    "error/real": 3,
+    "note/fp": 11
+   }
+  },
+  "C_docs_sample": {
+   "read": 20,
+   "real": 1,
+   "fp": 19,
+   "by_severity": {
+    "error/fp": 1,
+    "error/real": 1,
+    "note/fp": 16,
+    "warning/fp": 2
+   }
+  }
+ },
+ "third_party_claims": {
+  "B": {
+   "readme": 17,
+   "docs": 755
+  },
+  "C": {
+   "readme": 36,
+   "docs": 897
+  }
+ },
+ "third_party_A_docs_first_run_claims": 184,
+ "third_party_findings": {
+  "B": {
+   "readme": 2,
+   "docs": 135
+  },
+  "C": {
+   "readme": 14,
+   "docs": 400
+  }
+ }
+}

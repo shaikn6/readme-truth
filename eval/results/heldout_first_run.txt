@@ -33,7 +33,7 @@ Out of scope by category
     1 external state
 
 Findings on the 'after' commits (HEAD), by check and review verdict
-  command            claims= 157  note/fp=3, note/real=1
+  command            claims= 157  note/fp=4
   contradiction      claims=   0  warning/fp=2
   coverage           claims=  10  warning/real=1
   license            claims=   9  error/fp=1
@@ -43,6 +43,6 @@ Findings on the 'after' commits (HEAD), by check and review verdict
   test-count         claims=  16  error/fp=4, error/real=4
   version            claims=  15  warning/real=1
 
-  false positives: 29 of 981 claims checked (2.96%); unreviewed: 0
+  false positives: 30 of 981 claims checked (3.06%); unreviewed: 0
 
 Unlabelled findings at 'before': 32
