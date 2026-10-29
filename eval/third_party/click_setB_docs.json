@@ -1,0 +1,256 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md",
+   "CHANGES.md",
+   "docs/advanced.md",
+   "docs/api.md",
+   "docs/arguments.md",
+   "docs/changes.md",
+   "docs/click-concepts.md",
+   "docs/command-line-reference.md",
+   "docs/commands-and-groups.md",
+   "docs/commands.md",
+   "docs/complex.md",
+   "docs/contrib.md",
+   "docs/contributing.md",
+   "docs/design-opinions.md",
+   "docs/documentation.md",
+   "docs/entry-points.md",
+   "docs/exceptions.md",
+   "docs/extending-click.md",
+   "docs/faqs.md",
+   "docs/handling-files.md",
+   "docs/index.md",
+   "docs/license.md",
+   "docs/option-decorators.md",
+   "docs/options.md",
+   "docs/parameter-types.md",
+   "docs/parameters.md",
+   "docs/prompts.md",
+   "docs/quickstart.md",
+   "docs/setuptools.md",
+   "docs/shell-completion.md",
+   "docs/standalone-apps.md",
+   "docs/support-multiple-versions.md",
+   "docs/testing.md",
+   "docs/unicode-support.md",
+   "docs/upgrade-guides.md",
+   "docs/utils.md",
+   "docs/virtualenv.md",
+   "docs/why.md",
+   "docs/wincmd.md"
+  ],
+  "claims": 31,
+  "verified": 31,
+  "findings": 12,
+  "by_severity": {
+   "note": 7,
+   "warning": 0,
+   "error": 5
+  },
+  "test_count_source": "static count of 43 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 6,
+    "verified": 6,
+    "findings": 5
+   },
+   "path": {
+    "claims": 13,
+    "verified": 13,
+    "findings": 4
+   },
+   "command": {
+    "claims": 3,
+    "verified": 3,
+    "findings": 3
+   },
+   "link": {
+    "claims": 9,
+    "verified": 9,
+    "findings": 0
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "version",
+   "file": "CHANGES.md",
+   "line": 440,
+   "claim": "Python 3.7",
+   "claimed": "python 3.7",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 3.7; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "CHANGES.md",
+   "line": 442,
+   "claim": "setup.cfg",
+   "claimed": "`setup.cfg` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `setup.cfg` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "CHANGES.md",
+   "line": 676,
+   "claim": "Python 3.6",
+   "claimed": "python 3.6",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 3.6; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "CHANGES.md",
+   "line": 834,
+   "claim": "Python 2",
+   "claimed": "python 2",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 2; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "CHANGES.md",
+   "line": 1158,
+   "claim": "Python 2.7",
+   "claimed": "python 2.7",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 2.7; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "CHANGES.md",
+   "line": 1220,
+   "claim": "Python 2.6",
+   "claimed": "python 2.6",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 2.6; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 39,
+   "claim": "python hello.py --count=3",
+   "claimed": "script `hello.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `hello.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "docs/entry-points.md",
+   "line": 8,
+   "claim": "python hello.py",
+   "claimed": "script `hello.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `hello.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/entry-points.md",
+   "line": 34,
+   "claim": "hello.py",
+   "claimed": "`hello.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `hello.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "command",
+   "file": "docs/faqs.md",
+   "line": 73,
+   "claim": "python foo.py $M0/.viola/2025-01-25-17-20-23-307878",
+   "claimed": "script `foo.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `foo.py` exists; found missing (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/standalone-apps.md",
+   "line": 45,
+   "claim": "app.py",
+   "claimed": "`app.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `app.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/standalone-apps.md",
+   "line": 96,
+   "claim": "__main__.py",
+   "claimed": "`__main__.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `__main__.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  }
+ ]
+}

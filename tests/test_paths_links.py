@@ -137,3 +137,22 @@ def test_docs_site_links_and_root_commands(make_repo):
     )
     rep = run(root, Options(docs=True))
     assert [(f.file, f.claim) for f in rep.findings] == [("docs/async.md", "advanced/transports#nope")]
+
+
+def test_mkdocs_features(make_repo):
+    root = make_repo(
+        {
+            "Makefile": "docs:\n\tmkdocs build\n",
+            "docs/guide.md": "## Wrap {#wrap-it}\n[](){#loose}\n\n- item\n"
+            "    ```python\n    x[0](data=data)\n    ```\n",
+            "docs/api.md": "::: pkg.module\n",
+            "docs/release-notes.md": "[x](#nowhere)\n",
+            "docs/index.md": "[a](guide.md#wrap-it) [b](guide.md#loose) [c](api.md#pkg.module.f) "
+            "[d](guide.md#nope)\n\n"
+            "```sh\nmake docs\n```\n",
+            "README.md": "# x\n",
+        }
+    )
+    rep = run(root, Options(docs=True))
+    assert [(f.file, f.claim) for f in rep.findings] == [("docs/index.md", "guide.md#nope")]
+    assert "docs/release-notes.md" not in rep.files

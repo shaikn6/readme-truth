@@ -1,0 +1,75 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md"
+  ],
+  "claims": 1,
+  "verified": 1,
+  "findings": 1,
+  "by_severity": {
+   "note": 1,
+   "warning": 0,
+   "error": 0
+  },
+  "test_count_source": "static count of 43 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "path": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "command": {
+    "claims": 1,
+    "verified": 1,
+    "findings": 1
+   },
+   "link": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 39,
+   "claim": "python hello.py --count=3",
+   "claimed": "script `hello.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `hello.py` exists; found missing (git ls-files).",
+   "fixable": false
+  }
+ ]
+}

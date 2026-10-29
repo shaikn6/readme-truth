@@ -16,7 +16,7 @@ from ..repo import Repo, join, normpath
 def check_links(doc: Doc, repo: Repo, external: bool = False) -> Result:
     res = Result()
     doc_dir = PurePosixPath(doc.path).parent
-    anchor_cache: dict[str, set[str]] = {doc.path: doc.anchors}
+    anchor_cache: dict[str, set[str] | None] = {doc.path: None if doc.generated_anchors else doc.anchors}
     urls: list[tuple[int, str]] = []
     for link in doc.links:
         target = link.target.strip()
@@ -55,7 +55,10 @@ def check_links(doc: Doc, repo: Repo, external: bool = False) -> Result:
             target_doc = doc.path
         if anchor and target_doc.lower().endswith((".md", ".markdown")):
             if target_doc not in anchor_cache:
-                anchor_cache[target_doc] = parse(repo.read(target_doc), target_doc).anchors
+                target = parse(repo.read(target_doc), target_doc)
+                anchor_cache[target_doc] = None if target.generated_anchors else target.anchors
+            if anchor_cache[target_doc] is None:
+                continue
             known = anchor_cache[target_doc] | {"top"}  # browsers scroll #top to the start of the page
             if anchor not in known and urllib.parse.unquote(anchor).lower() not in known:
                 res.findings.append(

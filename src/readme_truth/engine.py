@@ -20,7 +20,10 @@ from .repo import Repo
 
 CHECKS = ("test-count", "coverage", "version", "path", "command", "link", "license", "number-provenance")
 IGNORE_RE = re.compile(r"<!--\s*readme-truth:\s*ignore\s*-->")
-SKIP_DOCS = re.compile(r"^(CHANGELOG|HISTORY|CODE_OF_CONDUCT|LICEN[CS]E)", re.IGNORECASE)
+# History files quote old versions and counts on purpose.
+SKIP_DOCS = re.compile(
+    r"^(CHANGELOG|CHANGES|HISTORY|NEWS|RELEASE[-_ ]?NOTES|CODE_OF_CONDUCT|LICEN[CS]E)", re.IGNORECASE
+)
 
 
 @dataclass
@@ -59,7 +62,8 @@ def markdown_files(repo: Repo, opts: Options) -> list[str]:
             for f in repo.files
             if f.lower().endswith(".md")
             and f != readme
-            and (("/" not in f and not SKIP_DOCS.match(f)) or f.startswith("docs/"))
+            and ("/" not in f or f.startswith("docs/"))
+            and not SKIP_DOCS.match(f.rsplit("/", 1)[-1])
         ]
     return files
 

@@ -1,0 +1,349 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md",
+   "AGENTS.md",
+   "AI_POLICY.md",
+   "docs/applications.md",
+   "docs/authentication.md",
+   "docs/background.md",
+   "docs/config.md",
+   "docs/contributing.md",
+   "docs/database.md",
+   "docs/early-hints.md",
+   "docs/endpoints.md",
+   "docs/exceptions.md",
+   "docs/graphql.md",
+   "docs/index.md",
+   "docs/lifespan.md",
+   "docs/middleware.md",
+   "docs/release-notes.md",
+   "docs/requests.md",
+   "docs/responses.md",
+   "docs/routing.md",
+   "docs/schemas.md",
+   "docs/server-push.md",
+   "docs/staticfiles.md",
+   "docs/templates.md",
+   "docs/testclient.md",
+   "docs/third-party-packages.md",
+   "docs/threadpool.md",
+   "docs/websockets.md"
+  ],
+  "claims": 67,
+  "verified": 63,
+  "findings": 20,
+  "by_severity": {
+   "note": 5,
+   "warning": 3,
+   "error": 12
+  },
+  "test_count_source": "static count of 31 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 4,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 19,
+    "verified": 19,
+    "findings": 13
+   },
+   "path": {
+    "claims": 12,
+    "verified": 12,
+    "findings": 5
+   },
+   "command": {
+    "claims": 7,
+    "verified": 7,
+    "findings": 0
+   },
+   "link": {
+    "claims": 25,
+    "verified": 25,
+    "findings": 2
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 112,
+   "claim": "example.py",
+   "claimed": "`example.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `example.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/contributing.md",
+   "line": 156,
+   "claim": "__version__.py",
+   "claimed": "`__version__.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `__version__.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/index.md",
+   "line": 2,
+   "claim": "/img/starlette.svg#only-light",
+   "claimed": "link to `/img/starlette.svg`",
+   "actual": "no such file",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix or remove the link",
+   "message": "Claimed link to `/img/starlette.svg`; found no such file (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/index.md",
+   "line": 3,
+   "claim": "/img/starlette_dark.svg#only-dark",
+   "claimed": "link to `/img/starlette_dark.svg`",
+   "actual": "no such file",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix or remove the link",
+   "message": "Claimed link to `/img/starlette_dark.svg`; found no such file (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/index.md",
+   "line": 127,
+   "claim": "main.py",
+   "claimed": "`main.py` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `main.py` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 44,
+   "claim": "Python 3.10",
+   "claimed": "python 3.10",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.10; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "contradiction",
+   "file": "docs/release-notes.md",
+   "line": 52,
+   "claim": "Python 3.10",
+   "claimed": "different minimum python versions (3.11 on line 52, 3.10 on line 52, 3.8 on line 1135)",
+   "actual": "one minimum",
+   "evidence": "the README states the requirement twice",
+   "severity": "warning",
+   "suggestion": "state one minimum version",
+   "message": "Claimed different minimum python versions (3.11 on line 52, 3.10 on line 52, 3.8 on line 1135); found one minimum (the README states the requirement twice).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 52,
+   "claim": "Python 3.10",
+   "claimed": "python 3.10+",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.10+; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 90,
+   "claim": "AnyIO 3",
+   "claimed": "AnyIO 3",
+   "actual": ">=4.0.0,<5",
+   "evidence": "Python requirements",
+   "severity": "warning",
+   "suggestion": "write AnyIO 4",
+   "message": "Claimed AnyIO 3; found >=4.0.0,<5 (Python requirements).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 377,
+   "claim": "Python 3.9",
+   "claimed": "python 3.9",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.9; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 522,
+   "claim": "Python 3.8",
+   "claimed": "python 3.8",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.8; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 819,
+   "claim": "Python 3.7",
+   "claimed": "python 3.7",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.7; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 979,
+   "claim": "Python 3.6",
+   "claimed": "python 3.6",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.6; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 1095,
+   "claim": "Python 3.10",
+   "claimed": "python 3.10",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.10; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 1122,
+   "claim": "Python 3.10",
+   "claimed": "python 3.10",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.10; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 1135,
+   "claim": "Python 3.8+",
+   "claimed": "python 3.8+",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.8+; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/release-notes.md",
+   "line": 1152,
+   "claim": "Python3.9",
+   "claimed": "python 3.9",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "error",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.9; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/requests.md",
+   "line": 140,
+   "claim": "myimage.jpg",
+   "claimed": "`myimage.jpg` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `myimage.jpg` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/responses.md",
+   "line": 53,
+   "claim": "Python 3.14+",
+   "claimed": "python 3.14+",
+   "actual": ">=3.11",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "warning",
+   "suggestion": "write Python 3.11+",
+   "message": "Claimed python 3.14+; found >=3.11 (pyproject.toml requires-python).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/staticfiles.md",
+   "line": 10,
+   "claim": "index.html",
+   "claimed": "`index.html` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `index.html` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  }
+ ]
+}

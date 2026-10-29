@@ -415,7 +415,8 @@ class CommandChecker:
         if st.lost:
             return
         names = [makefile] if makefile else ["GNUmakefile", "makefile", "Makefile"]
-        found = next((join(cwd, n) for n in names if join(cwd, n) in self.repo.file_set), None)
+        dirs = [cwd, ""] if cwd == self.doc_dir else [cwd]  # docs/*.md run make from the repo root
+        found = next((join(d, n) for d in dirs for n in names if join(d, n) in self.repo.file_set), None)
         self.res.claims += 1
         self.res.verified += 1
         if found is None:

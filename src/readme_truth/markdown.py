@@ -9,12 +9,13 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-FENCE_RE = re.compile(r"^(\s{0,3})(`{3,}|~{3,})\s*([\w+-]*)")
+FENCE_RE = re.compile(r"^(\s*)(`{3,}|~{3,})\s*([\w+-]*)")  # any indent: fences nest in lists and admonitions
 HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+(.*?)\s*#*\s*$")
 INLINE_CODE_RE = re.compile(r"(`+)(.+?)\1")
 LINK_RE = re.compile(r"(!?)\[((?:[^\[\]]|\[[^\]]*\])*)\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
 REF_DEF_RE = re.compile(r"^\s{0,3}\[([^\]]+)\]:\s*<?(\S+?)>?(?:\s+.*)?$")
 HTML_ATTR_RE = re.compile(r"""\b(href|src)\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
+ATTR_ID_RE = re.compile(r"\{:?\s*#([\w-]+)[^}]*\}")  # attr_list ids: "## Title {#custom}", "[](){#custom}"
 HTML_ANCHOR_RE = re.compile(r"""<a\s[^>]*\b(?:name|id)\s*=\s*["']([^"']+)["']""", re.IGNORECASE)
 TABLE_SEP_RE = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$")
 
@@ -52,6 +53,7 @@ class Doc:
     code_spans: list[tuple[str, int]] = field(default_factory=list)
     tables: list[Table] = field(default_factory=list)
     anchors: set[str] = field(default_factory=set)
+    generated_anchors: bool = False
 
     def prose(self) -> list[tuple[int, str]]:
         """(line number, text) for every line outside fenced code."""
@@ -118,12 +120,15 @@ def _scan_prose_line(doc: Doc, no: int, line: str) -> None:
         doc.links.append(Link("", m.group(2), no, image=m.group(1).lower() == "src"))
     for m in HTML_ANCHOR_RE.finditer(bare):
         doc.anchors.add(m.group(1))
+    doc.anchors.update(ATTR_ID_RE.findall(bare))
+    if line.startswith(":::"):
+        doc.generated_anchors = True  # mkdocstrings renders API anchors we cannot see
 
 
 def _assign_slugs(doc: Doc) -> None:
     seen: dict[str, int] = {}
     for _, text, _ in doc.headings:
-        slug = slugify(text)
+        slug = slugify(ATTR_ID_RE.sub("", text).strip())
         n = seen.get(slug, 0)
         seen[slug] = n + 1
         doc.anchors.add(slug if n == 0 else f"{slug}-{n}")

@@ -1,0 +1,202 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md",
+   "docs/advanced/authentication.md",
+   "docs/advanced/clients.md",
+   "docs/advanced/event-hooks.md",
+   "docs/advanced/extensions.md",
+   "docs/advanced/proxies.md",
+   "docs/advanced/resource-limits.md",
+   "docs/advanced/ssl.md",
+   "docs/advanced/text-encodings.md",
+   "docs/advanced/timeouts.md",
+   "docs/advanced/transports.md",
+   "docs/api.md",
+   "docs/async.md",
+   "docs/code_of_conduct.md",
+   "docs/compatibility.md",
+   "docs/contributing.md",
+   "docs/environment_variables.md",
+   "docs/exceptions.md",
+   "docs/http2.md",
+   "docs/index.md",
+   "docs/logging.md",
+   "docs/quickstart.md",
+   "docs/third_party_packages.md",
+   "docs/troubleshooting.md"
+  ],
+  "claims": 69,
+  "verified": 65,
+  "findings": 9,
+  "by_severity": {
+   "note": 2,
+   "warning": 6,
+   "error": 1
+  },
+  "test_count_source": "static count of 31 pytest files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 4,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 4,
+    "verified": 4,
+    "findings": 0
+   },
+   "path": {
+    "claims": 7,
+    "verified": 7,
+    "findings": 2
+   },
+   "command": {
+    "claims": 7,
+    "verified": 7,
+    "findings": 0
+   },
+   "link": {
+    "claims": 47,
+    "verified": 47,
+    "findings": 7
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "link",
+   "file": "docs/advanced/clients.md",
+   "line": 154,
+   "claim": "#client-instances",
+   "claimed": "anchor `#client-instances`",
+   "actual": "no heading with that anchor in docs/advanced/clients.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#client-instances`; found no heading with that anchor in docs/advanced/clients.md (heading slugs).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/advanced/clients.md",
+   "line": 162,
+   "claim": "#merging-of-parameters",
+   "claimed": "anchor `#merging-of-parameters`",
+   "actual": "no heading with that anchor in docs/advanced/clients.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#merging-of-parameters`; found no heading with that anchor in docs/advanced/clients.md (heading slugs).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/advanced/clients.md",
+   "line": 319,
+   "claim": "foo.png",
+   "claimed": "`foo.png` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `foo.png` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "path",
+   "file": "docs/advanced/clients.md",
+   "line": 319,
+   "claim": "bar.png",
+   "claimed": "`bar.png` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `bar.png` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/advanced/proxies.md",
+   "line": 29,
+   "claim": "#routing",
+   "claimed": "anchor `#routing`",
+   "actual": "no heading with that anchor in docs/advanced/proxies.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#routing`; found no heading with that anchor in docs/advanced/proxies.md (heading slugs).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/async.md",
+   "line": 194,
+   "claim": "../advanced/transports#asgitransport",
+   "claimed": "link to `../advanced/transports`",
+   "actual": "no such file",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix or remove the link",
+   "message": "Claimed link to `../advanced/transports`; found no such file (git ls-files).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/compatibility.md",
+   "line": 200,
+   "claim": "advanced/clients.md#client-instances",
+   "claimed": "anchor `#client-instances`",
+   "actual": "no heading with that anchor in docs/advanced/clients.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#client-instances`; found no heading with that anchor in docs/advanced/clients.md (heading slugs).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/environment_variables.md",
+   "line": 18,
+   "claim": "advanced/proxies.md#http-proxying",
+   "claimed": "anchor `#http-proxying`",
+   "actual": "no heading with that anchor in docs/advanced/proxies.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#http-proxying`; found no heading with that anchor in docs/advanced/proxies.md (heading slugs).",
+   "fixable": false
+  },
+  {
+   "check": "link",
+   "file": "docs/third_party_packages.md",
+   "line": 19,
+   "claim": "advanced/authentication.md#customizing-authentication",
+   "claimed": "anchor `#customizing-authentication`",
+   "actual": "no heading with that anchor in docs/advanced/authentication.md",
+   "evidence": "heading slugs",
+   "severity": "warning",
+   "suggestion": "point the link at an existing heading",
+   "message": "Claimed anchor `#customizing-authentication`; found no heading with that anchor in docs/advanced/authentication.md (heading slugs).",
+   "fixable": false
+  }
+ ]
+}
