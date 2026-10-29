@@ -1,0 +1,48 @@
+split=dev repos=11 audit discrepancies=39 in scope=10 out of scope=29
+
+Recall on in-scope audit discrepancies at the 'before' commits
+  command            1/1
+  path               1/1
+  test-count         5/5
+  version            3/3
+  total              10/10
+   hit  od-1   test-count        passes 64/64; 67 collected (severity error, after: 0)
+   hit  od-3   command           pytest --cov=src but pytest-cov is not declared (severity warning, after: 0)
+   hit  ls-2   version           BENCHMARKS.md says Go 1.27.2, go.mod requires 1.27.3 (severity warning, after: 1)
+   hit  pf-1   version           'React 19' but package.json has react ^18.3.1 (severity warning, after: 0)
+   hit  nim-1  test-count        135 tests; 138 collected (severity error, after: 0)
+   hit  lg-1   test-count        415 tests; 424 collected (severity error, after: 0)
+   hit  lg-2   test-count        381 test functions; 389 exist (severity error, after: 0)
+   hit  lg-3   test-count        across 19 files; 20 test files (severity error, after: 0)
+   hit  sd-5   path              training curves in runs/, which is gitignored (severity note, after: 0)
+   hit  le-1   version           'Requires Go 1.26' but go.mod requires go 1.26.10 (severity warning, after: 0)
+
+Out of scope by category
+    7 semantic
+    5 runtime behaviour
+    4 runtime output
+    2 environment
+    2 timing
+    1 no committed coverage report
+    1 computation
+    1 cross-repo
+    1 completeness of a listing
+    1 external tool state
+    1 research claim
+    1 needs re-run
+    1 live network
+    1 missing instruction
+
+Findings on the 'after' commits (HEAD), by check and review verdict
+  command            claims=  97  error/real=2
+  coverage           claims=   9  
+  license            claims=  17  
+  link               claims=  28  
+  number-provenance  claims= 135  note/fp=1, note/real=3
+  path               claims= 151  
+  test-count         claims=   9  
+  version            claims=  22  warning/real=2
+
+  false positives: 1 of 468 claims checked (0.21%); unreviewed: 0
+
+Unlabelled findings at 'before': 6

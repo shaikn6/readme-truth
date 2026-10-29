@@ -1,0 +1,10 @@
+{
+  "on-device-llm-optimizer|README.md|89|number-provenance": {"verdict": "real", "note": "measured model sizes (7.64 GB, 945.3 MB, 147.9 MB) and stated targets; no committed file holds them"},
+  "ledger-service|BENCHMARKS.md|7|version": {"verdict": "real", "note": "audit item ls-2; the fix PR did not touch BENCHMARKS.md"},
+  "ledger-service|BENCHMARKS.md|22|number-provenance": {"verdict": "real", "note": "load-test numbers with no committed raw output"},
+  "nvidia-nim-rag-techniques|README.md|4|version": {"verdict": "real", "note": "badge says Python 3.11+, pyproject allows 3.10; audit did not list it"},
+  "llm-gateway|SECURITY.md|29|command": {"verdict": "real", "note": "security template tells readers to pip install -r requirements.txt; the repo has no such file"},
+  "finance-agent-crew|SECURITY.md|29|command": {"verdict": "real", "note": "same template problem as llm-gateway"},
+  "sigdet|README.md|22|number-provenance": {"verdict": "real", "note": "parameter counts 2.6M / 9.4M are not in any committed file"},
+  "sigdet|README.md|75|number-provenance": {"verdict": "fp", "note": "deltas are differences of committed robustness.json values; derived numbers cannot be traced"}
+}

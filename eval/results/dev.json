@@ -1,0 +1,925 @@
+{
+ "split": "dev",
+ "repos": [
+  "on-device-llm-optimizer",
+  "ledger-service",
+  "portfolio",
+  "nvidia-nim-rag-techniques",
+  "llm-gateway",
+  "sigdet",
+  "exec-rl",
+  "event-impact-signals",
+  "lethe",
+  "fintech-devsecops-pipeline",
+  "finance-agent-crew"
+ ],
+ "labels": [
+  {
+   "repo": "on-device-llm-optimizer",
+   "id": "od-1",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    131
+   ],
+   "what": "passes 64/64; 67 collected",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "on-device-llm-optimizer",
+   "id": "od-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    131
+   ],
+   "what": "41% coverage vs 45%",
+   "why": "no committed coverage report"
+  },
+  {
+   "repo": "on-device-llm-optimizer",
+   "id": "od-3",
+   "type": "command",
+   "file": "README.md",
+   "lines": [
+    131
+   ],
+   "what": "pytest --cov=src but pytest-cov is not declared",
+   "why": null,
+   "detected": true,
+   "severity": "warning",
+   "after_hits": 0
+  },
+  {
+   "repo": "on-device-llm-optimizer",
+   "id": "od-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "kd_smoke.py defaults differ from the committed run",
+   "why": "semantic"
+  },
+  {
+   "repo": "on-device-llm-optimizer",
+   "id": "od-5",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "INT4/FP32 size targets unreachable by design",
+   "why": "computation"
+  },
+  {
+   "repo": "ledger-service",
+   "id": "ls-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    77,
+    82
+   ],
+   "what": "Makefile overrides an exported DATABASE_URL",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "ledger-service",
+   "id": "ls-2",
+   "type": "version",
+   "file": "BENCHMARKS.md",
+   "lines": [
+    7
+   ],
+   "what": "BENCHMARKS.md says Go 1.27.2, go.mod requires 1.27.3",
+   "why": null,
+   "detected": true,
+   "severity": "warning",
+   "after_hits": 1
+  },
+  {
+   "repo": "portfolio",
+   "id": "pf-1",
+   "type": "version",
+   "file": "README.md",
+   "lines": [
+    10
+   ],
+   "what": "'React 19' but package.json has react ^18.3.1",
+   "why": null,
+   "detected": true,
+   "severity": "warning",
+   "after_hits": 0
+  },
+  {
+   "repo": "portfolio",
+   "id": "pf-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    36
+   ],
+   "what": "'250+ vectors' not in the linked repo",
+   "why": "cross-repo"
+  },
+  {
+   "repo": "portfolio",
+   "id": "pf-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    26,
+    27
+   ],
+   "what": "site-copy file list incomplete",
+   "why": "completeness of a listing"
+  },
+  {
+   "repo": "portfolio",
+   "id": "pf-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "npm install vs npm ci",
+   "why": "semantic"
+  },
+  {
+   "repo": "nvidia-nim-rag-techniques",
+   "id": "nim-1",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    217
+   ],
+   "what": "135 tests; 138 collected",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "nvidia-nim-rag-techniques",
+   "id": "nim-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "pytest --cov crashes on macOS without KMP_DUPLICATE_LIB_OK",
+   "why": "environment"
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-1",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    11,
+    138,
+    156
+   ],
+   "what": "415 tests; 424 collected",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-2",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    156
+   ],
+   "what": "381 test functions; 389 exist",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-3",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    156
+   ],
+   "what": "across 19 files; 20 test files",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    172
+   ],
+   "what": "OpenAPI-3.0 badge; served spec is 3.1.0",
+   "why": "runtime output"
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-5",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    168
+   ],
+   "what": "helm template needs helm dependency build first",
+   "why": "external tool state"
+  },
+  {
+   "repo": "llm-gateway",
+   "id": "lg-6",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    187
+   ],
+   "what": "x-gateway-* are body fields, not headers",
+   "why": "semantic"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    26,
+    27
+   ],
+   "what": "shipped weights are not the model in the table",
+   "why": "runtime output"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    39,
+    42
+   ],
+   "what": "robustness of the shipped model differs",
+   "why": "runtime output"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    43
+   ],
+   "what": "'cost ~1 point' contradicted by robustness.json direction",
+   "why": "research claim"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    48,
+    66
+   ],
+   "what": "bench.json predates the split (schema and values)",
+   "why": "needs re-run"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-5",
+   "type": "path",
+   "file": "README.md",
+   "lines": [
+    48
+   ],
+   "what": "training curves in runs/, which is gitignored",
+   "why": null,
+   "detected": true,
+   "severity": "note",
+   "after_hits": 0
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-6",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    65,
+    66
+   ],
+   "what": "scripts hard-code device='mps'",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "sigdet",
+   "id": "sd-7",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    30,
+    65,
+    66
+   ],
+   "what": "bench/robustness need uncommitted runs/*/best.pt",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "'suite runs in well under a second' (1.6 s observed)",
+   "why": "timing"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "hero JSON example not reproducible from its title",
+   "why": "runtime output"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "5 s GDELT spacing still rate-limited (429)",
+   "why": "live network"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "eis serve ignores --db-path (code bug)",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-5",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "pytest writes data/signals.db as a side effect",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "event-impact-signals",
+   "id": "eis-6",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "RSS feeds silently empty without a CA bundle",
+   "why": "environment"
+  },
+  {
+   "repo": "lethe",
+   "id": "le-1",
+   "type": "version",
+   "file": "README.md",
+   "lines": [
+    50
+   ],
+   "what": "'Requires Go 1.26' but go.mod requires go 1.26.10",
+   "why": null,
+   "detected": true,
+   "severity": "warning",
+   "after_hits": 0
+  },
+  {
+   "repo": "lethe",
+   "id": "le-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    69,
+    81
+   ],
+   "what": "no install command for the Python package / [langchain] extra",
+   "why": "missing instruction"
+  },
+  {
+   "repo": "lethe",
+   "id": "le-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    38
+   ],
+   "what": "7,119 req/s throughput",
+   "why": "timing"
+  },
+  {
+   "repo": "fintech-devsecops-pipeline",
+   "id": "fd-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    116
+   ],
+   "what": "cp .env.example .env: .env never read",
+   "why": "semantic"
+  },
+  {
+   "repo": "fintech-devsecops-pipeline",
+   "id": "fd-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    106,
+    107
+   ],
+   "what": "'allow and deny path of every rule' wording",
+   "why": "semantic"
+  },
+  {
+   "repo": "fintech-devsecops-pipeline",
+   "id": "fd-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    70,
+    81
+   ],
+   "what": "'pip-audit SBOM' audits the runner, not the repo",
+   "why": "semantic"
+  },
+  {
+   "repo": "fintech-devsecops-pipeline",
+   "id": "fd-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    70,
+    81
+   ],
+   "what": "'CIS-K8s' is a Checkov run, not kube-bench",
+   "why": "semantic"
+  }
+ ],
+ "after": [
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 89,
+   "claim": "Variant | Size (measured) | Tokens/sec (target) | MMLU (target)",
+   "claimed": "a results table with 10 numbers",
+   "actual": "10 of them in no committed data file: 7.64, 25, 68.8%, 945.3, 12, 57%, 147.9, 45, 54%",
+   "evidence": "3 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 10 numbers; found 10 of them in no committed data file: 7.64, 25, 68.8%, 945.3, 12, 57%, 147.9, 45, 54% (3 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "on-device-llm-optimizer",
+   "review": {
+    "verdict": "real",
+    "note": "measured model sizes (7.64 GB, 945.3 MB, 147.9 MB) and stated targets; no committed file holds them"
+   }
+  },
+  {
+   "check": "version",
+   "file": "BENCHMARKS.md",
+   "line": 7,
+   "claim": "Go 1.27.2",
+   "claimed": "go 1.27.2",
+   "actual": ">=1.27.3",
+   "evidence": "go.mod",
+   "severity": "warning",
+   "suggestion": "write Go 1.27.3+",
+   "message": "Claimed go 1.27.2; found >=1.27.3 (go.mod).",
+   "fixable": false,
+   "repo": "ledger-service",
+   "review": {
+    "verdict": "real",
+    "note": "audit item ls-2; the fix PR did not touch BENCHMARKS.md"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "BENCHMARKS.md",
+   "line": 22,
+   "claim": "Scenario | Accounts | Workers | Throughput (median, range) | p50 | p99 | Errors | Balance",
+   "claimed": "a results table with 27 numbers",
+   "actual": "27 of them in no committed data file: 50, 1,455, 1,398, 519, 4.6, 12, 64, 1,806, 1,485, 825, 26, 147, 500, 32, 2,315, 2,248, 396, 12.0, 31, 128, 2,408, 2,245, 950, 41.7, 84",
+   "evidence": "1 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 27 numbers; found 27 of them in no committed data file: 50, 1,455, 1,398, 519, 4.6, 12, 64, 1,806, 1,485, 825, 26, 147, 500, 32, 2,315, 2,248, 396, 12.0, 31, 128, 2,408, 2,245, 950, 41.7, 84 (1 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "ledger-service",
+   "review": {
+    "verdict": "real",
+    "note": "load-test numbers with no committed raw output"
+   }
+  },
+  {
+   "check": "version",
+   "file": "README.md",
+   "line": 4,
+   "claim": "shields.io/badge/Python-3.11+",
+   "claimed": "python 3.11+",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "warning",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 3.11+; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false,
+   "repo": "nvidia-nim-rag-techniques",
+   "review": {
+    "verdict": "real",
+    "note": "badge says Python 3.11+, pyproject allows 3.10; audit did not list it"
+   }
+  },
+  {
+   "check": "command",
+   "file": "SECURITY.md",
+   "line": 29,
+   "claim": "pip install --upgrade -r requirements.txt",
+   "claimed": "requirements file `requirements.txt` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed requirements file `requirements.txt` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "llm-gateway",
+   "review": {
+    "verdict": "real",
+    "note": "security template tells readers to pip install -r requirements.txt; the repo has no such file"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 22,
+   "claim": "Model | Params | Split | mAP50 | mAP50-95 (95% interval) | Precision | Recall",
+   "claimed": "a results table with 28 numbers",
+   "actual": "4 of them in no committed data file: 2.6M, 9.4M",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 28 numbers; found 4 of them in no committed data file: 2.6M, 9.4M (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "sigdet",
+   "review": {
+    "verdict": "real",
+    "note": "parameter counts 2.6M / 9.4M are not in any committed file"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 75,
+   "claim": "Corruption | n | s",
+   "claimed": "a results table with 20 numbers",
+   "actual": "15 of them in no committed data file: -0.004, -0.006, -0.098, -0.023, -0.090, -0.092, -0.140, -0.041, -0.237, -0.013, -0.519, -0.061, -0.355",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 20 numbers; found 15 of them in no committed data file: -0.004, -0.006, -0.098, -0.023, -0.090, -0.092, -0.140, -0.041, -0.237, -0.013, -0.519, -0.061, -0.355 (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "sigdet",
+   "review": {
+    "verdict": "fp",
+    "note": "deltas are differences of committed robustness.json values; derived numbers cannot be traced"
+   }
+  },
+  {
+   "check": "command",
+   "file": "SECURITY.md",
+   "line": 29,
+   "claim": "pip install --upgrade -r requirements.txt",
+   "claimed": "requirements file `requirements.txt` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed requirements file `requirements.txt` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finance-agent-crew",
+   "review": {
+    "verdict": "real",
+    "note": "same template problem as llm-gateway"
+   }
+  }
+ ],
+ "before_unlabelled": [
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 82,
+   "claim": "Variant | Size | Tokens/sec | MMLU",
+   "claimed": "a results table with 11 numbers",
+   "actual": "11 of them in no committed data file: 2.2, 25, 68.8%, 910, 12, 57%, 120, 45, 54%",
+   "evidence": "3 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 11 numbers; found 11 of them in no committed data file: 2.2, 25, 68.8%, 910, 12, 57%, 120, 45, 54% (3 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "on-device-llm-optimizer"
+  },
+  {
+   "check": "number-provenance",
+   "file": "BENCHMARKS.md",
+   "line": 22,
+   "claim": "Scenario | Accounts | Workers | Throughput (median, range) | p50 | p99 | Errors | Balance",
+   "claimed": "a results table with 27 numbers",
+   "actual": "27 of them in no committed data file: 50, 1,455, 1,398, 519, 4.6, 12, 64, 1,806, 1,485, 825, 26, 147, 500, 32, 2,315, 2,248, 396, 12.0, 31, 128, 2,408, 2,245, 950, 41.7, 84",
+   "evidence": "1 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 27 numbers; found 27 of them in no committed data file: 50, 1,455, 1,398, 519, 4.6, 12, 64, 1,806, 1,485, 825, 26, 147, 500, 32, 2,315, 2,248, 396, 12.0, 31, 128, 2,408, 2,245, 950, 41.7, 84 (1 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "ledger-service"
+  },
+  {
+   "check": "version",
+   "file": "README.md",
+   "line": 4,
+   "claim": "shields.io/badge/Python-3.11+",
+   "claimed": "python 3.11+",
+   "actual": ">=3.10",
+   "evidence": "pyproject.toml requires-python",
+   "severity": "warning",
+   "suggestion": "write Python 3.10+",
+   "message": "Claimed python 3.11+; found >=3.10 (pyproject.toml requires-python).",
+   "fixable": false,
+   "repo": "nvidia-nim-rag-techniques"
+  },
+  {
+   "check": "command",
+   "file": "SECURITY.md",
+   "line": 29,
+   "claim": "pip install --upgrade -r requirements.txt",
+   "claimed": "requirements file `requirements.txt` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed requirements file `requirements.txt` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "llm-gateway"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 17,
+   "claim": "Model | Params | Split | mAP50 | mAP50-95 | Precision | Recall",
+   "claimed": "a results table with 20 numbers",
+   "actual": "4 of them in no committed data file: 2.6M, 9.4M",
+   "evidence": "7 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 20 numbers; found 4 of them in no committed data file: 2.6M, 9.4M (7 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "sigdet"
+  },
+  {
+   "check": "command",
+   "file": "SECURITY.md",
+   "line": 29,
+   "claim": "pip install --upgrade -r requirements.txt",
+   "claimed": "requirements file `requirements.txt` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "error",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed requirements file `requirements.txt` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finance-agent-crew"
+  }
+ ],
+ "claims": {
+  "on-device-llm-optimizer/before": {
+   "test-count": 1,
+   "coverage": 1,
+   "version": 4,
+   "path": 24,
+   "command": 8,
+   "link": 1,
+   "license": 2,
+   "number-provenance": 15
+  },
+  "on-device-llm-optimizer/after": {
+   "test-count": 1,
+   "coverage": 1,
+   "version": 4,
+   "path": 29,
+   "command": 11,
+   "link": 1,
+   "license": 2,
+   "number-provenance": 14
+  },
+  "ledger-service/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 2,
+   "path": 5,
+   "command": 29,
+   "link": 8,
+   "license": 2,
+   "number-provenance": 27
+  },
+  "ledger-service/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 2,
+   "path": 5,
+   "command": 33,
+   "link": 8,
+   "license": 2,
+   "number-provenance": 27
+  },
+  "portfolio/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 1,
+   "command": 3,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "portfolio/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 2,
+   "command": 3,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "nvidia-nim-rag-techniques/before": {
+   "test-count": 1,
+   "coverage": 3,
+   "version": 1,
+   "path": 19,
+   "command": 8,
+   "link": 4,
+   "license": 3,
+   "number-provenance": 16
+  },
+  "nvidia-nim-rag-techniques/after": {
+   "test-count": 1,
+   "coverage": 3,
+   "version": 1,
+   "path": 20,
+   "command": 9,
+   "link": 4,
+   "license": 3,
+   "number-provenance": 16
+  },
+  "llm-gateway/before": {
+   "test-count": 5,
+   "coverage": 3,
+   "version": 5,
+   "path": 25,
+   "command": 8,
+   "link": 6,
+   "license": 2,
+   "number-provenance": 0
+  },
+  "llm-gateway/after": {
+   "test-count": 5,
+   "coverage": 3,
+   "version": 5,
+   "path": 25,
+   "command": 8,
+   "link": 6,
+   "license": 2,
+   "number-provenance": 0
+  },
+  "sigdet/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 0,
+   "path": 13,
+   "command": 11,
+   "link": 2,
+   "license": 0,
+   "number-provenance": 20
+  },
+  "sigdet/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 21,
+   "command": 9,
+   "link": 2,
+   "license": 0,
+   "number-provenance": 64
+  },
+  "exec-rl/before": {
+   "test-count": 1,
+   "coverage": 0,
+   "version": 1,
+   "path": 9,
+   "command": 4,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 8
+  },
+  "exec-rl/after": {
+   "test-count": 1,
+   "coverage": 0,
+   "version": 2,
+   "path": 12,
+   "command": 4,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 8
+  },
+  "event-impact-signals/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 11,
+   "command": 5,
+   "link": 0,
+   "license": 1,
+   "number-provenance": 6
+  },
+  "event-impact-signals/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 11,
+   "command": 5,
+   "link": 0,
+   "license": 1,
+   "number-provenance": 6
+  },
+  "lethe/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 1,
+   "command": 3,
+   "link": 0,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "lethe/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 2,
+   "path": 2,
+   "command": 6,
+   "link": 0,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "fintech-devsecops-pipeline/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 0,
+   "path": 21,
+   "command": 3,
+   "link": 2,
+   "license": 2,
+   "number-provenance": 0
+  },
+  "fintech-devsecops-pipeline/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 0,
+   "path": 21,
+   "command": 2,
+   "link": 2,
+   "license": 2,
+   "number-provenance": 0
+  },
+  "finance-agent-crew/before": {
+   "test-count": 1,
+   "coverage": 2,
+   "version": 3,
+   "path": 3,
+   "command": 7,
+   "link": 3,
+   "license": 2,
+   "number-provenance": 0
+  },
+  "finance-agent-crew/after": {
+   "test-count": 1,
+   "coverage": 2,
+   "version": 3,
+   "path": 3,
+   "command": 7,
+   "link": 3,
+   "license": 2,
+   "number-provenance": 0
+  }
+ }
+}
