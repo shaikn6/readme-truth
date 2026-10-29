@@ -81,3 +81,18 @@ def test_data_pool_skips_large_and_lockfiles(make_repo, monkeypatch):
     monkeypatch.setattr(numbers, "MAX_FILE_BYTES", 5)
     pool = DataPool(Repo(root), set())
     assert pool.files == ["big.json"] and len(pool.values) == 0
+
+
+def test_license_about_other_work_is_ignored(make_repo):
+    root = make_repo(
+        {
+            "LICENSE": MIT,
+            "README.md": """
+            ## License
+            MIT. The upstream repository [X](https://github.com/x/y) is Apache-2.0; check with its authors.
+            This project is licensed under the MIT License.
+        """,
+        }
+    )
+    rep = run(root, Options(select={"license"}))
+    assert rep.findings == [] and rep.per_check["license"].claims == 1

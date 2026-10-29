@@ -1,0 +1,48 @@
+split=heldout repos=11 audit discrepancies=37 in scope=4 out of scope=33
+
+Recall on in-scope audit discrepancies at the 'before' commits
+  number-provenance  0/1
+  path               0/1
+  test-count         2/2
+  total              2/4
+   hit  lsa-1  test-count        479 / 487 tests (self-contradicting); 494 collected (severity error, after: 3)
+   MISS gr-2   number-provenance wildfire reliability table bands/n/rates not in calibration.json (severity None, after: 0)
+   hit  nf-1   test-count        429 tests; 430 collected (severity error, after: 0)
+   MISS ow-1   path              validate reads data/raw, which is gitignored and never downloaded (severity None, after: 0)
+
+Out of scope by category
+    4 needs re-run
+    4 runtime output
+    3 timing
+    3 environment
+    2 semantic
+    2 prose number
+    2 cross-repo
+    1 no committed coverage report
+    1 runtime behaviour
+    1 markdown lint
+    1 completeness of a listing
+    1 illustrative code
+    1 provenance of an image
+    1 environment (installed extras)
+    1 live data
+    1 prose number / timing
+    1 external page
+    1 runtime dependency resolution
+    1 missing instruction
+    1 external state
+
+Findings on the 'after' commits (HEAD), by check and review verdict
+  command            claims= 157  note/fp=3, note/real=1
+  contradiction      claims=   0  warning/fp=2
+  coverage           claims=  10  warning/real=1
+  license            claims=   9  error/fp=1
+  link               claims=  30  
+  number-provenance  claims= 544  note/fp=5, note/real=3
+  path               claims= 200  note/fp=13, warning/fp=1
+  test-count         claims=  16  error/fp=4, error/real=4
+  version            claims=  15  warning/real=1
+
+  false positives: 29 of 981 claims checked (2.96%); unreviewed: 0
+
+Unlabelled findings at 'before': 32

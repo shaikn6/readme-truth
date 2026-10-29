@@ -20,9 +20,10 @@ def test_paths(make_repo):
             "README.md": """
         Code in `src/app/main.py`, results in `data/results.json` and `results.json`.
         Missing: `src/app/gone.py`, `notes.txt`, and docs/missing.md in prose.
-        Curves land in `runs/`. The run writes `out/report.csv`.
+        Curves are in `runs/`. The run writes `out/report.csv`; put `your.csv`
+        in place, and `secret.pt` is kept out of git.
         Not paths: `owner/repo`, `BAAI/bge-small-en-v1.5`, `three.js`, `http://x/y.py`, `*.py`, `$HOME/x.py`,
-        `models prefixed with ollama/`, `1.2/3`, `make`, `foo`.
+        `models prefixed with ollama/`, `1.2/3`, `make`, `foo`, `src/app.main_func`.
 
         ```
         repo/
@@ -44,8 +45,7 @@ def test_paths(make_repo):
         (2, "notes.txt", Severity.NOTE),
         (2, "docs/missing.md", Severity.WARNING),
         (3, "runs/", Severity.NOTE),
-        (3, "out/report.csv", Severity.NOTE),
-        (14, "missing_dir/", Severity.WARNING),
+        (15, "missing_dir/", Severity.WARNING),
     }
 
 

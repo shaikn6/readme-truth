@@ -45,11 +45,18 @@ def key(repo: str, f: dict) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--snap", required=True)
+    ap.add_argument("--snap")
     ap.add_argument("--split", choices=["dev", "heldout", "all"], default="dev")
+    ap.add_argument("--rescore", help="re-print a saved results file with the current review verdicts")
     args = ap.parse_args()
-    opts = Options(docs=True)
     review = json.loads((HERE / "after_review.json").read_text()) if (HERE / "after_review.json").exists() else {}
+    if args.rescore:
+        out = json.loads(Path(args.rescore).read_text())
+        for f in out["after"]:
+            f["review"] = review.get(key(f["repo"], f))
+        print_tables(out)
+        return 0
+    opts = Options(docs=True)
     repos = split(args.split)
     out: dict = {"split": args.split, "repos": repos, "labels": [], "after": [], "before_unlabelled": [], "claims": {}}
     for repo in repos:

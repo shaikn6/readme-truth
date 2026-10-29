@@ -31,6 +31,7 @@ class Count:
     functions: int | None = None
     files: int | None = None
     per_path: dict[str, int] = field(default_factory=dict)  # test file -> tests
+    marker_counts: dict[str, int] = field(default_factory=dict)  # declared marker -> tests carrying it
 
 
 # ---------------------------------------------------------------- pytest (static)
@@ -66,6 +67,13 @@ def _as_list(v: str | list[str] | None) -> list[str]:
     if v is None:
         return []
     return v if isinstance(v, list) else v.split()
+
+
+def _as_list_lines(v: str | list[str] | None) -> list[str]:
+    """ini-style values hold one entry per line; TOML gives a list."""
+    if v is None:
+        return []
+    return v if isinstance(v, list) else [ln for ln in v.splitlines() if ln.strip()]
 
 
 def _deselected_marks(addopts: list[str]) -> tuple[set[str], bool]:
@@ -302,8 +310,12 @@ def static_pytest(repo: Repo) -> Count | None:
                 conftests[str(PurePosixPath(f).parent)] = _fixtures_in(ast.parse(repo.read(f)), None)
                 if "pytest_generate_tests" in repo.read(f):
                     exact = False
+                if "pytest_collection_modifyitems" in repo.read(f):
+                    exact = lower = False  # tests may be deselected or skipped at collection time
             except SyntaxError:
                 exact = lower = False
+    markers = [re.split(r"[:(]", m, maxsplit=1)[0].strip() for m in _as_list_lines(cfg.get("markers"))]
+    without = dict.fromkeys(markers, 0)  # total with each declared marker also deselected
     total = functions = 0
     per_path: dict[str, int] = {}
     for f in files:
@@ -311,11 +323,14 @@ def static_pytest(repo: Repo) -> Count | None:
         parents = list(PurePosixPath(f).parents)[::-1]  # outermost first, so inner conftests override
         for parent in parents:
             fixtures.update(conftests.get(str(parent), {}))
+        source = repo.read(f)
         try:
-            n, fn, ex, lb = _count_module(repo.read(f), fixtures, deselect)
+            n, fn, ex, lb = _count_module(source, fixtures, deselect)
         except SyntaxError:
             exact = lower = False
             continue
+        for m in without:
+            without[m] += _count_module(source, fixtures, deselect | {m})[0]
         exact &= ex
         lower &= lb
         total += n
@@ -328,6 +343,7 @@ def static_pytest(repo: Repo) -> Count | None:
         functions=functions,
         files=len(files),
         per_path=per_path,
+        marker_counts={m: total - n for m, n in without.items() if n < total},
         source=f"static count of {len(files)} pytest files",
     )
 

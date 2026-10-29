@@ -1,0 +1,1319 @@
+{
+ "split": "heldout",
+ "repos": [
+  "guard-gap-detector",
+  "fin-lora",
+  "llm-safety-auditor",
+  "mcp-diagram-agent",
+  "trade-arena",
+  "georisk-agent",
+  "nano-finbert",
+  "credit-arena",
+  "finarena",
+  "orbitwatch",
+  "shaikn6"
+ ],
+ "labels": [
+  {
+   "repo": "fin-lora",
+   "id": "fl-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    133,
+    136
+   ],
+   "what": "baselines.json does not reproduce (0.658/0.316 vs 0.656/0.310)",
+   "why": "needs re-run"
+  },
+  {
+   "repo": "fin-lora",
+   "id": "fl-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    88
+   ],
+   "what": "v1 row window (96 vs 256 tokens) not stated",
+   "why": "semantic"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-1",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    7,
+    60,
+    452
+   ],
+   "what": "479 / 487 tests (self-contradicting); 494 collected",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 3
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    60,
+    452
+   ],
+   "what": "98.00% coverage vs 98.09%",
+   "why": "no committed coverage report"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    119,
+    135
+   ],
+   "what": "PI-008 worked example output is stale",
+   "why": "runtime output"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    349,
+    351
+   ],
+   "what": "Streamlit dashboard raises SyntaxError",
+   "why": "runtime behaviour"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-5",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    84,
+    89
+   ],
+   "what": "orphaned table fragment (rows without header)",
+   "why": "markdown lint"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-6",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    16
+   ],
+   "what": "'5-page reports' (6 pages)",
+   "why": "runtime output"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-7",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    398
+   ],
+   "what": "OpenAPI-3.0 badge; served spec is 3.1.0",
+   "why": "runtime output"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-8",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    213,
+    216
+   ],
+   "what": "layout lists 3 of 14 test files",
+   "why": "completeness of a listing"
+  },
+  {
+   "repo": "llm-safety-auditor",
+   "id": "lsa-9",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    18,
+    35
+   ],
+   "what": "V2 snippet uses literal ... and an undefined name",
+   "why": "illustrative code"
+  },
+  {
+   "repo": "trade-arena",
+   "id": "ta-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    73
+   ],
+   "what": "runtime ~2 min",
+   "why": "timing"
+  },
+  {
+   "repo": "trade-arena",
+   "id": "ta-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    7
+   ],
+   "what": "results.png has no generator in the repo",
+   "why": "provenance of an image"
+  },
+  {
+   "repo": "trade-arena",
+   "id": "ta-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    31,
+    37,
+    50
+   ],
+   "what": "table drifts with new market data",
+   "why": "needs re-run"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    60,
+    281,
+    398
+   ],
+   "what": "231 tests / 84% hold only with the [research] extra",
+   "why": "environment (installed extras)"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-2",
+   "type": "number-provenance",
+   "file": "README.md",
+   "lines": [
+    246,
+    247,
+    248,
+    249,
+    250,
+    251
+   ],
+   "what": "wildfire reliability table bands/n/rates not in calibration.json",
+   "why": null,
+   "detected": false,
+   "severity": null,
+   "after_hits": 0
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    165,
+    166
+   ],
+   "what": "Miami 0.62 / AZ 0.57 / Oregon 0.67 in prose vs report.json",
+   "why": "prose number"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-4",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    322
+   ],
+   "what": "solar weakest states in prose",
+   "why": "prose number"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-5",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    183,
+    210
+   ],
+   "what": "Prithvi tables match the committed report but not a re-run",
+   "why": "needs re-run"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-6",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    346
+   ],
+   "what": "load-test latency p50/p95",
+   "why": "timing"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-7",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    80
+   ],
+   "what": "Columbus example output (live satellite scene)",
+   "why": "live data"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-8",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    113,
+    227,
+    3,
+    85,
+    347
+   ],
+   "what": "~0.58 vs 0.607, 22% of 120 sites, latency stated three ways",
+   "why": "prose number / timing"
+  },
+  {
+   "repo": "georisk-agent",
+   "id": "gr-9",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "grid read fails without a CA bundle",
+   "why": "environment"
+  },
+  {
+   "repo": "nano-finbert",
+   "id": "nf-1",
+   "type": "test-count",
+   "file": "README.md",
+   "lines": [
+    6,
+    98,
+    340
+   ],
+   "what": "429 tests; 430 collected",
+   "why": null,
+   "detected": true,
+   "severity": "error",
+   "after_hits": 0
+  },
+  {
+   "repo": "nano-finbert",
+   "id": "nf-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    33
+   ],
+   "what": "deterministic entities example differs",
+   "why": "runtime output"
+  },
+  {
+   "repo": "nano-finbert",
+   "id": "nf-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    10,
+    55,
+    58,
+    223
+   ],
+   "what": "numbers stale against the linked model card",
+   "why": "external page"
+  },
+  {
+   "repo": "credit-arena",
+   "id": "ca-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "study.json lacks the 'variant' key the current study.py writes",
+   "why": "needs re-run"
+  },
+  {
+   "repo": "credit-arena",
+   "id": "ca-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "make data fails without a CA bundle on python.org macOS",
+   "why": "environment"
+  },
+  {
+   "repo": "finarena",
+   "id": "fa-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    47
+   ],
+   "what": "make train crashes with pandas 3.1",
+   "why": "runtime dependency resolution"
+  },
+  {
+   "repo": "finarena",
+   "id": "fa-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    116
+   ],
+   "what": "cascade gap 0.4-1.0 vs 0.38-1.05 in fin-lora",
+   "why": "cross-repo"
+  },
+  {
+   "repo": "finarena",
+   "id": "fa-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [],
+   "what": "train download fails without a CA bundle",
+   "why": "environment"
+  },
+  {
+   "repo": "orbitwatch",
+   "id": "ow-1",
+   "type": "path",
+   "file": "README.md",
+   "lines": [
+    60
+   ],
+   "what": "validate reads data/raw, which is gitignored and never downloaded",
+   "why": null,
+   "detected": false,
+   "severity": null,
+   "after_hits": 0
+  },
+  {
+   "repo": "orbitwatch",
+   "id": "ow-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    103,
+    105
+   ],
+   "what": "no command given for the rl/ results",
+   "why": "missing instruction"
+  },
+  {
+   "repo": "orbitwatch",
+   "id": "ow-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    33
+   ],
+   "what": "28,748 objects in 57 s",
+   "why": "timing"
+  },
+  {
+   "repo": "shaikn6",
+   "id": "sh-1",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    30
+   ],
+   "what": "'250+ adversarial payloads' not in the linked repo",
+   "why": "cross-repo"
+  },
+  {
+   "repo": "shaikn6",
+   "id": "sh-2",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    71
+   ],
+   "what": "'in review' PR list is stale",
+   "why": "external state"
+  },
+  {
+   "repo": "shaikn6",
+   "id": "sh-3",
+   "type": null,
+   "file": "README.md",
+   "lines": [
+    31
+   ],
+   "what": "drops the caveat the linked repo states",
+   "why": "semantic"
+  }
+ ],
+ "after": [
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 219,
+   "claim": "Adapter | Command | Time",
+   "claimed": "a results table with 4 numbers",
+   "actual": "1 of them in no committed data file: 14.5",
+   "evidence": "72 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 4 numbers; found 1 of them in no committed data file: 14.5 (72 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "fin-lora",
+   "review": {
+    "verdict": "fp",
+    "note": "minutes converted from seconds in committed train_*.json"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "markets_gaps.md",
+   "line": 19,
+   "claim": "Market | Candidate | Size | Label source | License | Language | Red flags",
+   "claimed": "a results table with 10 numbers",
+   "actual": "7 of them in no committed data file: 38,091, 10K, 8.0M, 100K, 19,003, 13K, 39,829",
+   "evidence": "72 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 10 numbers; found 7 of them in no committed data file: 38,091, 10K, 8.0M, 100K, 19,003, 13K, 39,829 (72 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "fin-lora",
+   "review": {
+    "verdict": "fp",
+    "note": "sizes of external datasets, not results"
+   }
+  },
+  {
+   "check": "test-count",
+   "file": "README.md",
+   "line": 7,
+   "claim": "shields.io/badge/Tests-495%20passing",
+   "claimed": "495 tests",
+   "actual": "526 (estimate)",
+   "evidence": "static count of 16 pytest files",
+   "severity": "error",
+   "suggestion": "update the count to 526",
+   "message": "Claimed 495 tests; found 526 (estimate) (static count of 16 pytest files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "real",
+    "note": "PRs #74/#75 (2026-10-29) added tests after the README count was set; static lower bound 526 > 495"
+   }
+  },
+  {
+   "check": "test-count",
+   "file": "README.md",
+   "line": 62,
+   "claim": "495 tests",
+   "claimed": "495 tests",
+   "actual": "526 (estimate)",
+   "evidence": "static count of 16 pytest files",
+   "severity": "error",
+   "suggestion": "update the count to 526",
+   "message": "Claimed 495 tests; found 526 (estimate) (static count of 16 pytest files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "real",
+    "note": "same stale count (495 tests) and 14 vs 16 test modules"
+   }
+  },
+  {
+   "check": "test-count",
+   "file": "README.md",
+   "line": 62,
+   "claim": "across 14 test modules",
+   "claimed": "14 test files",
+   "actual": "16 (estimate)",
+   "evidence": "static count of 16 pytest files",
+   "severity": "error",
+   "suggestion": "update the count to 16",
+   "message": "Claimed 14 test files; found 16 (estimate) (static count of 16 pytest files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "real",
+    "note": "same stale count (495 tests) and 14 vs 16 test modules"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 74,
+   "claim": "Category | Templates | Mock configured failure rate | Flagged by an audit, mean of 200 seeds | Flagged, seed 42 | OWASP ",
+   "claimed": "a results table with 15 numbers",
+   "actual": "4 of them in no committed data file: 24.8%, 18.7%, 30.6%, 45.2%",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 15 numbers; found 4 of them in no committed data file: 24.8%, 18.7%, 30.6%, 45.2% (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "real",
+    "note": "mean-of-200-seeds rates are not in any committed file"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 392,
+   "claim": "Labeler | Detector | Precision | Recall | F1",
+   "claimed": "a results table with 24 numbers",
+   "actual": "5 of them in no committed data file: 0.35, 0.36, 0.26, 0.34, 0.54",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 24 numbers; found 5 of them in no committed data file: 0.35, 0.36, 0.26, 0.34, 0.54 (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "fp",
+    "note": "bootstrap interval bounds derived from committed hand_labels.json"
+   }
+  },
+  {
+   "check": "test-count",
+   "file": "README.md",
+   "line": 462,
+   "claim": "495 tests",
+   "claimed": "495 tests",
+   "actual": "526 (estimate)",
+   "evidence": "static count of 16 pytest files",
+   "severity": "error",
+   "suggestion": "update the count to 526",
+   "message": "Claimed 495 tests; found 526 (estimate) (static count of 16 pytest files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "real",
+    "note": "same stale count"
+   }
+  },
+  {
+   "check": "path",
+   "file": "SECURITY.md",
+   "line": 175,
+   "claim": "data/",
+   "claimed": "`data/` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `data/` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor",
+   "review": {
+    "verdict": "fp",
+    "note": "advice about a runtime data/ directory"
+   }
+  },
+  {
+   "check": "coverage",
+   "file": "CONTRIBUTING.md",
+   "line": 49,
+   "claim": "80% coverage",
+   "claimed": "a 80% coverage gate",
+   "actual": "fail-under 95%",
+   "evidence": "coverage settings in the repo",
+   "severity": "warning",
+   "suggestion": "say 95% or change the configured gate",
+   "message": "Claimed a 80% coverage gate; found fail-under 95% (coverage settings in the repo).",
+   "fixable": false,
+   "repo": "mcp-diagram-agent",
+   "review": {
+    "verdict": "real",
+    "note": "CONTRIBUTING says 80% minimum; pyproject and CI enforce 95%"
+   }
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 103,
+   "claim": "claude_desktop_config.json",
+   "claimed": "`claude_desktop_config.json` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `claude_desktop_config.json` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false,
+   "repo": "mcp-diagram-agent",
+   "review": {
+    "verdict": "fp",
+    "note": "the reader's Claude Desktop config file"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 29,
+   "claim": "Strategy | Sharpe before costs | Sharpe after costs | CAGR | Max drawdown | Trades / yr | Beat B&H | Sig. better | Sig. ",
+   "claimed": "a results table with 35 numbers",
+   "actual": "7 of them in no committed data file: 14.8%, 8.8%, 7.1, 56.5, 77.8, 59.1, 73.7",
+   "evidence": "1 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 35 numbers; found 7 of them in no committed data file: 14.8%, 8.8%, 7.1, 56.5, 77.8, 59.1, 73.7 (1 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "trade-arena",
+   "review": {
+    "verdict": "fp",
+    "note": "means over 10 assets computed from per-asset values in results.json"
+   }
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 202,
+   "claim": "data/financial_phrasebank.json",
+   "claimed": "`data/financial_phrasebank.json` exists (inline code)",
+   "actual": "missing from a fresh clone: git ignores it, so it only exists after something creates it",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `data/financial_phrasebank.json` exists (inline code); found missing from a fresh clone: git ignores it, so it only exists after something creates it (git ls-files).",
+   "fixable": false,
+   "repo": "nano-finbert",
+   "review": {
+    "verdict": "fp",
+    "note": "README says the file is not included in the repo"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 283,
+   "claim": "Model | Accuracy | Macro-F1",
+   "claimed": "a results table with 22 numbers",
+   "actual": "17 of them in no committed data file: 0.552, 0.507, 0.482, 0.623, 0.617, 0.633, 0.627, 0.634, 0.635, 0.638, 0.646, 0.668, 0.619, 0.743, 0.825, 0.830",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 22 numbers; found 17 of them in no committed data file: 0.552, 0.507, 0.482, 0.623, 0.617, 0.633, 0.627, 0.634, 0.635, 0.638, 0.646, 0.668, 0.619, 0.743, 0.825, 0.830 (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "nano-finbert",
+   "review": {
+    "verdict": "real",
+    "note": "distillation results with no committed results file"
+   }
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 51,
+   "claim": "timings.json",
+   "claimed": "`timings.json` exists (inline code)",
+   "actual": "missing from a fresh clone: git ignores it, so it only exists after something creates it",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `timings.json` exists (inline code); found missing from a fresh clone: git ignores it, so it only exists after something creates it (git ls-files).",
+   "fixable": false,
+   "repo": "credit-arena",
+   "review": {
+    "verdict": "fp",
+    "note": "same"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 99,
+   "claim": "Model | Tweets (2,388) | Manual headlines (267) | News snippets (2,000)",
+   "claimed": "a results table with 12 numbers",
+   "actual": "2 of them in no committed data file: 71.7%, 84.7%",
+   "evidence": "5 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 12 numbers; found 2 of them in no committed data file: 71.7%, 84.7% (5 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "finarena",
+   "review": {
+    "verdict": "fp",
+    "note": "numbers quoted from the fin-lora repository"
+   }
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python train_news.py Qwen/Qwen2.5-0.5B-Instruct news-0.5b",
+   "claimed": "script `train_news.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `train_news.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena",
+   "review": {
+    "verdict": "fp",
+    "note": "commands run inside the fin-lora repository"
+   }
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python eval_news.py ...",
+   "claimed": "script `eval_news.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `eval_news.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena",
+   "review": {
+    "verdict": "fp",
+    "note": "commands run inside the fin-lora repository"
+   }
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python export_for_finarena.py",
+   "claimed": "script `export_for_finarena.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `export_for_finarena.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena",
+   "review": {
+    "verdict": "fp",
+    "note": "commands run inside the fin-lora repository"
+   }
+  },
+  {
+   "check": "command",
+   "file": "docs/DEPLOY.md",
+   "line": 20,
+   "claim": "cp .env.example .env",
+   "claimed": "source file `.env.example` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed source file `.env.example` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena",
+   "review": {
+    "verdict": "real",
+    "note": "cp .env.example .env, but the repo has no .env.example"
+   }
+  },
+  {
+   "check": "version",
+   "file": "README.md",
+   "line": 46,
+   "claim": "Go 1.26",
+   "claimed": "go 1.26+",
+   "actual": ">=1.26.4",
+   "evidence": "go.mod",
+   "severity": "warning",
+   "suggestion": "write Go 1.26.4+",
+   "message": "Claimed go 1.26+; found >=1.26.4 (go.mod).",
+   "fixable": false,
+   "repo": "orbitwatch",
+   "review": {
+    "verdict": "real",
+    "note": "'Go 1.26+' while go.mod requires 1.26.4"
+   }
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 102,
+   "claim": "Policy | Passes inside 200 m, per 1,000 warnings | Collisions per million | Fuel per warning | Burns on | Cost",
+   "claimed": "a results table with 12 numbers",
+   "actual": "7 of them in no committed data file: 37.7, 401, 0.754, 0.0735, 11.7%, 13.8%, 0.0819",
+   "evidence": "2 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 12 numbers; found 7 of them in no committed data file: 37.7, 401, 0.754, 0.0735, 11.7%, 13.8%, 0.0819 (2 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "orbitwatch",
+   "review": {
+    "verdict": "real",
+    "note": "RL results with no committed results file"
+   }
+  }
+ ],
+ "before_unlabelled": [
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 216,
+   "claim": "Adapter | Command | Time",
+   "claimed": "a results table with 4 numbers",
+   "actual": "1 of them in no committed data file: 14.5",
+   "evidence": "72 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 4 numbers; found 1 of them in no committed data file: 14.5 (72 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "fin-lora"
+  },
+  {
+   "check": "number-provenance",
+   "file": "markets_gaps.md",
+   "line": 19,
+   "claim": "Market | Candidate | Size | Label source | License | Language | Red flags",
+   "claimed": "a results table with 10 numbers",
+   "actual": "7 of them in no committed data file: 38,091, 10K, 8.0M, 100K, 19,003, 13K, 39,829",
+   "evidence": "72 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 10 numbers; found 7 of them in no committed data file: 38,091, 10K, 8.0M, 100K, 19,003, 13K, 39,829 (72 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "fin-lora"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 72,
+   "claim": "Category | Templates | Mock configured failure rate | Flagged by an audit, mean of 200 seeds | Flagged, seed 42 | OWASP ",
+   "claimed": "a results table with 15 numbers",
+   "actual": "4 of them in no committed data file: 24.8%, 18.7%, 30.6%, 45.2%",
+   "evidence": "5 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 15 numbers; found 4 of them in no committed data file: 24.8%, 18.7%, 30.6%, 45.2% (5 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "llm-safety-auditor"
+  },
+  {
+   "check": "path",
+   "file": "SECURITY.md",
+   "line": 175,
+   "claim": "data/",
+   "claimed": "`data/` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `data/` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false,
+   "repo": "llm-safety-auditor"
+  },
+  {
+   "check": "coverage",
+   "file": "CONTRIBUTING.md",
+   "line": 49,
+   "claim": "80% coverage",
+   "claimed": "a 80% coverage gate",
+   "actual": "fail-under 95%",
+   "evidence": "coverage settings in the repo",
+   "severity": "warning",
+   "suggestion": "say 95% or change the configured gate",
+   "message": "Claimed a 80% coverage gate; found fail-under 95% (coverage settings in the repo).",
+   "fixable": false,
+   "repo": "mcp-diagram-agent"
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 103,
+   "claim": "claude_desktop_config.json",
+   "claimed": "`claude_desktop_config.json` exists (inline code)",
+   "actual": "no file or directory with this name anywhere in the repo",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `claude_desktop_config.json` exists (inline code); found no file or directory with this name anywhere in the repo (git ls-files).",
+   "fixable": false,
+   "repo": "mcp-diagram-agent"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 29,
+   "claim": "Strategy | Sharpe before costs | Sharpe after costs | CAGR | Max drawdown | Trades / yr | Beat B&H | Sig. better | Sig. ",
+   "claimed": "a results table with 35 numbers",
+   "actual": "7 of them in no committed data file: 14.8%, 8.8%, 7.1, 56.5, 77.8, 59.1, 73.7",
+   "evidence": "1 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 35 numbers; found 7 of them in no committed data file: 14.8%, 8.8%, 7.1, 56.5, 77.8, 59.1, 73.7 (1 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "trade-arena"
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 201,
+   "claim": "data/financial_phrasebank.json",
+   "claimed": "`data/financial_phrasebank.json` exists (inline code)",
+   "actual": "missing from a fresh clone: git ignores it, so it only exists after something creates it",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `data/financial_phrasebank.json` exists (inline code); found missing from a fresh clone: git ignores it, so it only exists after something creates it (git ls-files).",
+   "fixable": false,
+   "repo": "nano-finbert"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 282,
+   "claim": "Model | Accuracy | Macro-F1",
+   "claimed": "a results table with 22 numbers",
+   "actual": "17 of them in no committed data file: 0.552, 0.507, 0.482, 0.623, 0.617, 0.633, 0.627, 0.634, 0.635, 0.638, 0.646, 0.668, 0.619, 0.743, 0.825, 0.830",
+   "evidence": "6 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 22 numbers; found 17 of them in no committed data file: 0.552, 0.507, 0.482, 0.623, 0.617, 0.633, 0.627, 0.634, 0.635, 0.638, 0.646, 0.668, 0.619, 0.743, 0.825, 0.830 (6 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "nano-finbert"
+  },
+  {
+   "check": "path",
+   "file": "README.md",
+   "line": 51,
+   "claim": "timings.json",
+   "claimed": "`timings.json` exists (inline code)",
+   "actual": "missing from a fresh clone: git ignores it, so it only exists after something creates it",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path, commit the file, or say how to create it",
+   "message": "Claimed `timings.json` exists (inline code); found missing from a fresh clone: git ignores it, so it only exists after something creates it (git ls-files).",
+   "fixable": false,
+   "repo": "credit-arena"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 99,
+   "claim": "Model | Tweets (2,388) | Manual headlines (267) | News snippets (2,000)",
+   "claimed": "a results table with 12 numbers",
+   "actual": "2 of them in no committed data file: 71.7%, 84.7%",
+   "evidence": "5 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 12 numbers; found 2 of them in no committed data file: 71.7%, 84.7% (5 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "finarena"
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python train_news.py Qwen/Qwen2.5-0.5B-Instruct news-0.5b",
+   "claimed": "script `train_news.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `train_news.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena"
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python eval_news.py ...",
+   "claimed": "script `eval_news.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `eval_news.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena"
+  },
+  {
+   "check": "command",
+   "file": "README.md",
+   "line": 161,
+   "claim": "python export_for_finarena.py",
+   "claimed": "script `export_for_finarena.py` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed script `export_for_finarena.py` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena"
+  },
+  {
+   "check": "command",
+   "file": "docs/DEPLOY.md",
+   "line": 20,
+   "claim": "cp .env.example .env",
+   "claimed": "source file `.env.example` exists",
+   "actual": "missing",
+   "evidence": "git ls-files",
+   "severity": "note",
+   "suggestion": "fix the path or add the step that creates it",
+   "message": "Claimed source file `.env.example` exists; found missing (git ls-files).",
+   "fixable": false,
+   "repo": "finarena"
+  },
+  {
+   "check": "version",
+   "file": "README.md",
+   "line": 46,
+   "claim": "Go 1.26",
+   "claimed": "go 1.26+",
+   "actual": ">=1.26.4",
+   "evidence": "go.mod",
+   "severity": "warning",
+   "suggestion": "write Go 1.26.4+",
+   "message": "Claimed go 1.26+; found >=1.26.4 (go.mod).",
+   "fixable": false,
+   "repo": "orbitwatch"
+  },
+  {
+   "check": "number-provenance",
+   "file": "README.md",
+   "line": 99,
+   "claim": "Policy | Passes inside 200 m, per 1,000 warnings | Collisions per million | Fuel per warning | Burns on | Cost",
+   "claimed": "a results table with 12 numbers",
+   "actual": "7 of them in no committed data file: 37.7, 401, 0.754, 0.0735, 11.7%, 13.8%, 0.0819",
+   "evidence": "2 data files (json/csv/tsv/md)",
+   "severity": "note",
+   "suggestion": "regenerate the table from a committed results file, or commit the file it came from",
+   "message": "Claimed a results table with 12 numbers; found 7 of them in no committed data file: 37.7, 401, 0.754, 0.0735, 11.7%, 13.8%, 0.0819 (2 data files (json/csv/tsv/md)).",
+   "fixable": false,
+   "repo": "orbitwatch"
+  }
+ ],
+ "claims": {
+  "guard-gap-detector/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 4,
+   "path": 1,
+   "command": 3,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "guard-gap-detector/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 4,
+   "path": 1,
+   "command": 3,
+   "link": 1,
+   "license": 1,
+   "number-provenance": 0
+  },
+  "fin-lora/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 34,
+   "command": 30,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 66
+  },
+  "fin-lora/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 36,
+   "command": 30,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 66
+  },
+  "llm-safety-auditor/before": {
+   "test-count": 4,
+   "coverage": 3,
+   "version": 2,
+   "path": 58,
+   "command": 19,
+   "link": 6,
+   "license": 1,
+   "number-provenance": 29
+  },
+  "llm-safety-auditor/after": {
+   "test-count": 4,
+   "coverage": 3,
+   "version": 2,
+   "path": 60,
+   "command": 19,
+   "link": 6,
+   "license": 1,
+   "number-provenance": 53
+  },
+  "mcp-diagram-agent/before": {
+   "test-count": 1,
+   "coverage": 4,
+   "version": 4,
+   "path": 10,
+   "command": 5,
+   "link": 7,
+   "license": 2,
+   "number-provenance": 1
+  },
+  "mcp-diagram-agent/after": {
+   "test-count": 1,
+   "coverage": 4,
+   "version": 4,
+   "path": 10,
+   "command": 5,
+   "link": 7,
+   "license": 2,
+   "number-provenance": 1
+  },
+  "trade-arena/before": {
+   "test-count": 1,
+   "coverage": 0,
+   "version": 0,
+   "path": 0,
+   "command": 1,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 35
+  },
+  "trade-arena/after": {
+   "test-count": 1,
+   "coverage": 0,
+   "version": 0,
+   "path": 0,
+   "command": 1,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 35
+  },
+  "georisk-agent/before": {
+   "test-count": 2,
+   "coverage": 2,
+   "version": 0,
+   "path": 9,
+   "command": 17,
+   "link": 2,
+   "license": 1,
+   "number-provenance": 275
+  },
+  "georisk-agent/after": {
+   "test-count": 2,
+   "coverage": 2,
+   "version": 0,
+   "path": 11,
+   "command": 19,
+   "link": 2,
+   "license": 1,
+   "number-provenance": 287
+  },
+  "nano-finbert/before": {
+   "test-count": 3,
+   "coverage": 0,
+   "version": 1,
+   "path": 34,
+   "command": 28,
+   "link": 5,
+   "license": 2,
+   "number-provenance": 29
+  },
+  "nano-finbert/after": {
+   "test-count": 3,
+   "coverage": 0,
+   "version": 1,
+   "path": 36,
+   "command": 28,
+   "link": 5,
+   "license": 2,
+   "number-provenance": 29
+  },
+  "credit-arena/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 2,
+   "path": 21,
+   "command": 27,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 49
+  },
+  "credit-arena/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 2,
+   "path": 21,
+   "command": 29,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 49
+  },
+  "finarena/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 0,
+   "path": 11,
+   "command": 19,
+   "link": 3,
+   "license": 0,
+   "number-provenance": 12
+  },
+  "finarena/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 0,
+   "path": 11,
+   "command": 19,
+   "link": 3,
+   "license": 0,
+   "number-provenance": 12
+  },
+  "orbitwatch/before": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 8,
+   "command": 3,
+   "link": 2,
+   "license": 1,
+   "number-provenance": 12
+  },
+  "orbitwatch/after": {
+   "test-count": 0,
+   "coverage": 0,
+   "version": 1,
+   "path": 11,
+   "command": 4,
+   "link": 2,
+   "license": 1,
+   "number-provenance": 12
+  },
+  "shaikn6/before": {
+   "test-count": 3,
+   "coverage": 1,
+   "version": 0,
+   "path": 0,
+   "command": 0,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 0
+  },
+  "shaikn6/after": {
+   "test-count": 3,
+   "coverage": 1,
+   "version": 0,
+   "path": 0,
+   "command": 0,
+   "link": 1,
+   "license": 0,
+   "number-provenance": 0
+  }
+ }
+}

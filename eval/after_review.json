@@ -1,10 +1,166 @@
 {
-  "on-device-llm-optimizer|README.md|89|number-provenance": {"verdict": "real", "note": "measured model sizes (7.64 GB, 945.3 MB, 147.9 MB) and stated targets; no committed file holds them"},
-  "ledger-service|BENCHMARKS.md|7|version": {"verdict": "real", "note": "audit item ls-2; the fix PR did not touch BENCHMARKS.md"},
-  "ledger-service|BENCHMARKS.md|22|number-provenance": {"verdict": "real", "note": "load-test numbers with no committed raw output"},
-  "nvidia-nim-rag-techniques|README.md|4|version": {"verdict": "real", "note": "badge says Python 3.11+, pyproject allows 3.10; audit did not list it"},
-  "llm-gateway|SECURITY.md|29|command": {"verdict": "real", "note": "security template tells readers to pip install -r requirements.txt; the repo has no such file"},
-  "finance-agent-crew|SECURITY.md|29|command": {"verdict": "real", "note": "same template problem as llm-gateway"},
-  "sigdet|README.md|22|number-provenance": {"verdict": "real", "note": "parameter counts 2.6M / 9.4M are not in any committed file"},
-  "sigdet|README.md|75|number-provenance": {"verdict": "fp", "note": "deltas are differences of committed robustness.json values; derived numbers cannot be traced"}
+ "on-device-llm-optimizer|README.md|89|number-provenance": {
+  "verdict": "real",
+  "note": "measured model sizes (7.64 GB, 945.3 MB, 147.9 MB) and stated targets; no committed file holds them"
+ },
+ "ledger-service|BENCHMARKS.md|7|version": {
+  "verdict": "real",
+  "note": "audit item ls-2; the fix PR did not touch BENCHMARKS.md"
+ },
+ "ledger-service|BENCHMARKS.md|22|number-provenance": {
+  "verdict": "real",
+  "note": "load-test numbers with no committed raw output"
+ },
+ "nvidia-nim-rag-techniques|README.md|4|version": {
+  "verdict": "real",
+  "note": "badge says Python 3.11+, pyproject allows 3.10; audit did not list it"
+ },
+ "llm-gateway|SECURITY.md|29|command": {
+  "verdict": "real",
+  "note": "security template tells readers to pip install -r requirements.txt; the repo has no such file"
+ },
+ "finance-agent-crew|SECURITY.md|29|command": {
+  "verdict": "real",
+  "note": "same template problem as llm-gateway"
+ },
+ "sigdet|README.md|22|number-provenance": {
+  "verdict": "real",
+  "note": "parameter counts 2.6M / 9.4M are not in any committed file"
+ },
+ "sigdet|README.md|75|number-provenance": {
+  "verdict": "fp",
+  "note": "deltas are differences of committed robustness.json values; derived numbers cannot be traced"
+ },
+ "fin-lora|README.md|30|path": {
+  "verdict": "fp",
+  "note": "lexicon files the reader is told to put in place"
+ },
+ "fin-lora|README.md|31|path": {
+  "verdict": "fp",
+  "note": "lexicon file and directory the reader supplies"
+ },
+ "fin-lora|README.md|201|path": {
+  "verdict": "fp",
+  "note": "README says adapters/ is gitignored"
+ },
+ "fin-lora|README.md|219|number-provenance": {
+  "verdict": "fp",
+  "note": "minutes converted from seconds in committed train_*.json"
+ },
+ "fin-lora|README.md|237|license": {
+  "verdict": "fp",
+  "note": "sentence about another project's licence (ProsusAI/finBERT)"
+ },
+ "fin-lora|markets_gaps.md|19|number-provenance": {
+  "verdict": "fp",
+  "note": "sizes of external datasets, not results"
+ },
+ "llm-safety-auditor|README.md|7|test-count": {
+  "verdict": "real",
+  "note": "PRs #74/#75 (2026-10-29) added tests after the README count was set; static lower bound 526 > 495"
+ },
+ "llm-safety-auditor|README.md|62|test-count": {
+  "verdict": "real",
+  "note": "same stale count (495 tests) and 14 vs 16 test modules"
+ },
+ "llm-safety-auditor|README.md|462|test-count": {
+  "verdict": "real",
+  "note": "same stale count"
+ },
+ "llm-safety-auditor|README.md|74|number-provenance": {
+  "verdict": "real",
+  "note": "mean-of-200-seeds rates are not in any committed file"
+ },
+ "llm-safety-auditor|README.md|132|path": {
+  "verdict": "fp",
+  "note": "dotted code reference src/owasp_scorer.classify_attack"
+ },
+ "llm-safety-auditor|README.md|392|number-provenance": {
+  "verdict": "fp",
+  "note": "bootstrap interval bounds derived from committed hand_labels.json"
+ },
+ "llm-safety-auditor|SECURITY.md|175|path": {
+  "verdict": "fp",
+  "note": "advice about a runtime data/ directory"
+ },
+ "mcp-diagram-agent|CONTRIBUTING.md|49|coverage": {
+  "verdict": "real",
+  "note": "CONTRIBUTING says 80% minimum; pyproject and CI enforce 95%"
+ },
+ "mcp-diagram-agent|README.md|103|path": {
+  "verdict": "fp",
+  "note": "the reader's Claude Desktop config file"
+ },
+ "trade-arena|README.md|29|number-provenance": {
+  "verdict": "fp",
+  "note": "means over 10 assets computed from per-asset values in results.json"
+ },
+ "georisk-agent|README.md|60|test-count": {
+  "verdict": "fp",
+  "note": "'the 2 scikit-learn tests' is a subset"
+ },
+ "georisk-agent|README.md|284|contradiction": {
+  "verdict": "fp",
+  "note": "built from the 500 and 2 false claims"
+ },
+ "georisk-agent|README.md|284|test-count": {
+  "verdict": "fp",
+  "note": "'returned a 500 while offline tests passed' is an HTTP status"
+ },
+ "georisk-agent|README.md|285|test-count": {
+  "verdict": "fp",
+  "note": "231 = 233 collected minus 2 network-marked tests"
+ },
+ "georisk-agent|README.md|404|test-count": {
+  "verdict": "fp",
+  "note": "same offline count"
+ },
+ "nano-finbert|README.md|202|path": {
+  "verdict": "fp",
+  "note": "README says the file is not included in the repo"
+ },
+ "nano-finbert|README.md|283|number-provenance": {
+  "verdict": "real",
+  "note": "distillation results with no committed results file"
+ },
+ "credit-arena|README.md|37|path": {
+  "verdict": "fp",
+  "note": "timings.json is produced by make run; README explains it is not committed"
+ },
+ "credit-arena|README.md|51|path": {
+  "verdict": "fp",
+  "note": "same"
+ },
+ "finarena|README.md|70|path": {
+  "verdict": "fp",
+  "note": "README says signature.pt is kept out of git"
+ },
+ "finarena|README.md|99|number-provenance": {
+  "verdict": "fp",
+  "note": "numbers quoted from the fin-lora repository"
+ },
+ "finarena|README.md|161|command": {
+  "verdict": "fp",
+  "note": "commands run inside the fin-lora repository"
+ },
+ "finarena|docs/DEPLOY.md|20|command": {
+  "verdict": "real",
+  "note": "cp .env.example .env, but the repo has no .env.example"
+ },
+ "orbitwatch|README.md|46|version": {
+  "verdict": "real",
+  "note": "'Go 1.26+' while go.mod requires 1.26.4"
+ },
+ "orbitwatch|README.md|64|path": {
+  "verdict": "fp",
+  "note": "the reader downloads this CSV"
+ },
+ "orbitwatch|README.md|102|number-provenance": {
+  "verdict": "real",
+  "note": "RL results with no committed results file"
+ },
+ "shaikn6|README.md|30|contradiction": {
+  "verdict": "fp",
+  "note": "profile README quotes test counts of different repositories"
+ }
 }

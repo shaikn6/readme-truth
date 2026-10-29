@@ -36,6 +36,11 @@ STATEMENT_RE = re.compile(
     r"licen[cs]e:|is licen[cs]ed)\b",
     re.IGNORECASE,
 )
+THIS_RE = re.compile(
+    r"\bthis (project|repo|repository|code|library|package|tool|software|work)\b|"
+    r"\b(the|all) (code|source|project)\b|^\W*(released|licensed|distributed|available) under",
+    re.IGNORECASE,
+)
 OTHER_WORK_RE = re.compile(
     r"\b(from|uses?|based on|portions?|third[- ]party|dependenc\w+|logo|dataset|data|model|"
     r"weights|fonts?|icons?|images?|assets?|vendored|upstream|original)\b",
@@ -66,11 +71,12 @@ def check_license(doc: Doc, repo: Repo) -> Result:
                 lid = identify(m.group(1).replace("--", "-").replace("%20", " ").replace("_", " "), False)
                 if lid:
                     claims.append((no, lid, m.group(0)))
-        if (in_license_section or STATEMENT_RE.search(line)) and not OTHER_WORK_RE.search(BADGE_RE.sub(" ", line)):
-            text = BADGE_RE.sub(" ", line)
-            lid = identify(text, False)
-            if lid and (in_license_section or re.search(r"licen[cs]", line, re.IGNORECASE)):
-                claims.append((no, lid, line.strip()))
+        text = BADGE_RE.sub(" ", line)
+        about_this = bool(THIS_RE.search(text)) and bool(STATEMENT_RE.search(text))
+        # In a License section a bare "MIT" line is the claim; a long sentence there may describe other work.
+        short = in_license_section and len(re.findall(r"\w+", re.sub(r"\([^)]*\)", "", text))) <= 8
+        if (about_this or short) and not OTHER_WORK_RE.search(text) and (lid := identify(text, False)):
+            claims.append((no, lid, line.strip()))
     if not claims:
         return res
     found = next((f for f in LICENSE_FILES if f in repo.file_set), None)

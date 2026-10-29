@@ -34,70 +34,25 @@ TESTS_RE = re.compile(
 )
 FILES_RE = re.compile(r"\b(?:across|in)\s+" + NUM + r"\s+(?:test\s+)?(?:files|modules)\b", re.IGNORECASE)
 PATH_RE = re.compile(r"[\w./-]*[\w-]+(?:\.(?:py|go|ts|js|tsx|jsx)|/)")
-NOT_ADJECTIVES = {
-    "of",
-    "the",
-    "a",
-    "an",
-    "in",
-    "for",
-    "and",
-    "or",
-    "to",
-    "with",
-    "from",
-    "these",
-    "those",
-    "our",
-    "its",
-    "their",
-    "all",
-    "on",
-    "that",
-    "which",
-    "are",
-    "were",
-    "is",
-    "plus",
-}
-SUBSET_WORDS = {
-    "integration",
-    "e2e",
-    "end-to-end",
-    "smoke",
-    "load",
-    "benchmark",
-    "property",
-    "property-based",
-    "golden",
-    "fuzz",
-    "regression",
-    "contract",
-    "snapshot",
-    "live",
-    "network",
-    "slow",
-    "gpu",
-    "eval",
-    "extra",
-    "new",
-    "additional",
-    "more",
-    "other",
-    "failing",
-    "failed",
-    "skipped",
-    "flaky",
-    "rego",
-    "opa",
-    "frontend",
-    "backend",
-    "browser",
-    "docker",
-    "manual",
-    "example",
-    "sample",
-    "policy",
+# Words allowed between the number and "tests" ("231 offline tests"). Anything else ("500 while offline
+# tests", "2 scikit-learn tests") is not a whole-suite count.
+SUITE_WORDS = {
+    "unit",
+    "offline",
+    "automated",
+    "hermetic",
+    "pytest",
+    "python",
+    "go",
+    "passing",
+    "green",
+    "total",
+    "deterministic",
+    "fast",
+    "local",
+    "core",
+    "independent",
+    "isolated",
 }
 SUBSET_CONTEXT = re.compile(r"\b(adds?|added|adding|includes? \d|another|per (?:file|module|rule))\b", re.IGNORECASE)
 
@@ -178,7 +133,7 @@ def _line_claims(no: int, line: str, counts: list[Count]) -> list[Claim]:
         add("tests", _int(m.group(2)), _approx(m.group(1), m.group(3)), [m.span(2)], m)
     for m in TESTS_RE.finditer(line):
         words = m.group(4).lower().split()
-        if any(w in NOT_ADJECTIVES or w in SUBSET_WORDS for w in words):
+        if any(w not in SUITE_WORDS for w in words):
             continue
         kind = "functions" if m.group(5).lower() == "test functions" else "tests"
         add(kind, _int(m.group(2)), _approx(m.group(1), m.group(3)), [m.span(2)], m)
@@ -188,7 +143,9 @@ def _line_claims(no: int, line: str, counts: list[Count]) -> list[Claim]:
     return out
 
 
-def _matches(claim: Claim, actual: int) -> bool:
+def _matches(claim: Claim, actual: int, alternatives: tuple[int, ...] = ()) -> bool:
+    if claim.kind == "tests" and not claim.approx and claim.value in alternatives:
+        return True  # the count with one declared marker deselected (`-m "not network"`)
     if claim.approx == "min":
         return actual >= claim.value
     if claim.approx == "about":
@@ -226,7 +183,8 @@ def check_test_counts(doc: Doc, repo: Repo, counts: list[Count]) -> Result:
                 res.verified += 1
             continue
         actual, c = picked
-        if _matches(cl, actual):
+        alternatives = tuple(c.tests - n for n in c.marker_counts.values()) if not cl.scope else ()
+        if _matches(cl, actual, alternatives):
             res.verified += 1
             continue
         if c.exact:
@@ -266,8 +224,8 @@ def check_test_counts(doc: Doc, repo: Repo, counts: list[Count]) -> Result:
 
 
 def _contradictions(doc: Doc, claims: list[Claim], counts: list[Count]) -> list[Finding]:
-    if len(counts) > 1:
-        return []
+    if len(counts) != 1:
+        return []  # no suite here (a profile README quoting other repos), or several suites
     whole = [c for c in claims if c.kind == "tests" and not c.approx and not c.scope]
     values = Counter(c.value for c in whole)
     if len(values) < 2:

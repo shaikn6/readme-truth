@@ -121,3 +121,23 @@ def test_coverage_formats(tmp_path):
     empty = tmp_path / "empty"
     empty.write_text("nothing")
     assert read_coverage(str(empty)) is None
+
+
+def test_marker_deselection_and_suite_words(make_repo):
+    root = make_repo(
+        {
+            "pyproject.toml": '[tool.pytest.ini_options]\nmarkers = ["network: hits the internet"]\n',
+            "tests/test_a.py": "import pytest\ndef test_a(): pass\ndef test_b(): pass\n"
+            "@pytest.mark.network\ndef test_live(): pass\n",
+            "README.md": "2 offline tests (3 with network). It returned a 500 while offline tests passed. "
+            "The 2 scikit-learn tests.\n",
+        }
+    )
+    rep = run(root, Options(select={"test-count"}))
+    assert rep.findings == [] and rep.per_check["test-count"].verified == 1
+
+
+def test_no_suite_no_contradiction(make_repo):
+    root = make_repo({"README.md": "| repo | 428 tests |\n|---|---|\n| other | 495 tests |\n"})
+    rep = run(root, Options(select={"test-count"}))
+    assert rep.findings == [] and rep.per_check["test-count"].claims == 2
