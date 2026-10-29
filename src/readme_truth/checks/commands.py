@@ -120,7 +120,8 @@ class CommandChecker:
         rel = self._path(st, p)
         if self._is_created(st, rel) or rel.startswith(".."):
             return None
-        return self.repo.exists(rel)
+        # docs/contributing.md shows commands run from the repo root, not from docs/.
+        return self.repo.exists(rel) or (st.cwd == self.doc_dir != "" and self.repo.exists(normpath(p)))
 
     def _flag(
         self,

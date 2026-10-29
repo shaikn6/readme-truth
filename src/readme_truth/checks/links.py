@@ -33,7 +33,8 @@ def check_links(doc: Doc, repo: Repo, external: bool = False) -> Result:
             if rel.startswith(".."):
                 continue  # GitHub web routes such as ../../actions or ../../issues
             res.verified += 1
-            if not repo.exists(rel):
+            found = next((c for c in (rel, f"{rel}.md", f"{rel}/index.md", f"{rel}/README.md") if repo.exists(c)), None)
+            if found is None:  # extensionless links are how static doc sites (mkdocs) point at pages
                 res.findings.append(
                     Finding(
                         check="link",
@@ -48,7 +49,7 @@ def check_links(doc: Doc, repo: Repo, external: bool = False) -> Result:
                     )
                 )
                 continue
-            target_doc = rel
+            target_doc = found
         else:
             res.verified += 1
             target_doc = doc.path

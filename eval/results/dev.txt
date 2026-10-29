@@ -41,8 +41,8 @@ Findings on the 'after' commits (HEAD), by check and review verdict
   number-provenance  claims= 135  note/fp=1, note/real=3
   path               claims= 151  
   test-count         claims=   9  
-  version            claims=  22  warning/real=2
+  version            claims=  18  warning/real=2
 
-  false positives: 1 of 468 claims checked (0.21%); unreviewed: 0
+  false positives: 1 of 464 claims checked (0.22%); unreviewed: 0
 
 Unlabelled findings at 'before': 6

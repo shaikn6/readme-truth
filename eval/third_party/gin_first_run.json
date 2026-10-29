@@ -1,0 +1,130 @@
+{
+ "tool": "readme-truth",
+ "version": "0.1.0",
+ "summary": {
+  "files": [
+   "README.md",
+   "BENCHMARKS.md",
+   "CONTRIBUTING.md",
+   "docs/doc.md"
+  ],
+  "claims": 97,
+  "verified": 97,
+  "findings": 5,
+  "by_severity": {
+   "note": 0,
+   "warning": 0,
+   "error": 5
+  },
+  "test_count_source": "static count of 40 Go test files",
+  "by_check": {
+   "test-count": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "coverage": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "version": {
+    "claims": 6,
+    "verified": 6,
+    "findings": 5
+   },
+   "path": {
+    "claims": 1,
+    "verified": 1,
+    "findings": 0
+   },
+   "command": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "link": {
+    "claims": 90,
+    "verified": 90,
+    "findings": 0
+   },
+   "license": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   },
+   "number-provenance": {
+    "claims": 0,
+    "verified": 0,
+    "findings": 0
+   }
+  }
+ },
+ "findings": [
+  {
+   "check": "version",
+   "file": "docs/doc.md",
+   "line": 1838,
+   "claim": "Go 1.6",
+   "claimed": "go 1.6",
+   "actual": ">=1.26.0",
+   "evidence": "go.mod",
+   "severity": "error",
+   "suggestion": "write Go 1.26.0+",
+   "message": "Claimed go 1.6; found >=1.26.0 (go.mod).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/doc.md",
+   "line": 2076,
+   "claim": "go 1.6",
+   "claimed": "go 1.6",
+   "actual": ">=1.26.0",
+   "evidence": "go.mod",
+   "severity": "error",
+   "suggestion": "write Go 1.26.0+",
+   "message": "Claimed go 1.6; found >=1.26.0 (go.mod).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/doc.md",
+   "line": 2393,
+   "claim": "Go 1.8",
+   "claimed": "go 1.8",
+   "actual": ">=1.26.0",
+   "evidence": "go.mod",
+   "severity": "error",
+   "suggestion": "write Go 1.26.0+",
+   "message": "Claimed go 1.8; found >=1.26.0 (go.mod).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/doc.md",
+   "line": 2396,
+   "claim": "go1.8",
+   "claimed": "go 1.8",
+   "actual": ">=1.26.0",
+   "evidence": "go.mod",
+   "severity": "error",
+   "suggestion": "write Go 1.26.0+",
+   "message": "Claimed go 1.8; found >=1.26.0 (go.mod).",
+   "fixable": false
+  },
+  {
+   "check": "version",
+   "file": "docs/doc.md",
+   "line": 2458,
+   "claim": "go1.8+",
+   "claimed": "go 1.8+",
+   "actual": ">=1.26.0",
+   "evidence": "go.mod",
+   "severity": "error",
+   "suggestion": "write Go 1.26.0+",
+   "message": "Claimed go 1.8+; found >=1.26.0 (go.mod).",
+   "fixable": false
+  }
+ ]
+}

@@ -123,3 +123,17 @@ def test_status_handles_errors(monkeypatch):
 
     monkeypatch.setattr(links.urllib.request, "urlopen", lambda req, timeout: Resp())
     assert links._status("https://x.example") == 200
+
+
+def test_docs_site_links_and_root_commands(make_repo):
+    root = make_repo(
+        {
+            "scripts/test": "#!/bin/sh\n",
+            "docs/advanced/transports.md": "# Transports\n## ASGI\n",
+            "docs/async.md": "See [t](advanced/transports#asgi) and [bad](advanced/transports#nope).\n\n"
+            "```shell\n$ scripts/test\n```\n\nA failing run prints `1 failed, 435 passed`.\n",
+            "README.md": "# x\n",
+        }
+    )
+    rep = run(root, Options(docs=True))
+    assert [(f.file, f.claim) for f in rep.findings] == [("docs/async.md", "advanced/transports#nope")]

@@ -54,6 +54,7 @@ SUITE_WORDS = {
     "independent",
     "isolated",
 }
+FAILED_RUN_RE = re.compile(r"\b[1-9]\d* (?:failed|errors?)\b")
 SUBSET_CONTEXT = re.compile(r"\b(adds?|added|adding|includes? \d|another|per (?:file|module|rule))\b", re.IGNORECASE)
 
 
@@ -107,7 +108,8 @@ def _scope(line: str, counts: list[Count]) -> list[str] | None:
 def find_claims(doc: Doc, counts: list[Count]) -> list[Claim]:
     claims: list[Claim] = []
     for no, line in enumerate(doc.lines, 1):
-        if not SUBSET_CONTEXT.search(line):
+        # Output of a failing run ("1 failed, 435 passed") illustrates an error, it does not size the suite.
+        if not SUBSET_CONTEXT.search(line) and not FAILED_RUN_RE.search(line):
             claims += _line_claims(no, line, counts)
     return [c for c in claims if c.value >= 2]
 

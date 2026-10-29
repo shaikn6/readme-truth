@@ -19,7 +19,7 @@ def test_python_requirements(make_repo):
                           Requires Python 3.10 or newer.
                           Tested on Python 3.12. Python 3.14 is not supported yet.
                           Old Pydantic v1 code was dropped.
-                          FastAPI 0.95 style. Pydantic v2 and FastAPI 0.110 are fine. Works on Python 3.9.
+                          FastAPI 0.95 style. Pydantic v2 and FastAPI 0.110 are fine. Supports Python 3.9.
                       """,
         }
     )
@@ -33,7 +33,14 @@ def test_python_requirements(make_repo):
 
 
 def test_go_patch_minimum(make_repo):
-    root = make_repo({"go.mod": "module x\n\ngo 1.26.10\n", "README.md": "Requires Go 1.26.\n\nBuilt with Go 1.27.\n"})
+    root = make_repo(
+        {
+            "go.mod": "module x\n\ngo 1.26.10\n",
+            "README.md": "Requires Go 1.26.\n\nBuilt with Go 1.27.\n\n"
+            "This feature is unavailable in Go 1.6 and lower. http.Pusher is supported only go1.8+.\n\n"
+            "In Go 1.5 the API changed.\n",
+        }
+    )
     f = checks(run_versions(root), "version")
     assert len(f) == 1 and f[0].line == 1 and f[0].severity == Severity.WARNING
     assert f[0].suggestion == "write Go 1.26.10+"
@@ -44,11 +51,11 @@ def test_node_and_package_json(make_repo):
         {
             "package.json": '{"engines": {"node": ">=20"}, "dependencies": {"react": "^18.3.1", '
             '"three": "^0.160.0"}, "devDependencies": {"vite": "~5.2.0"}}',
-            "README.md": "Node 18 works. React 19 + Vite 5. Node.js 20+.\n",
+            "README.md": "Requires Node 18. React 19 + Vite 5. Node.js 20+.\n",
         }
     )
     got = sorted((f.claimed, f.severity) for f in checks(run_versions(root), "version"))
-    assert got == [("React 19", Severity.WARNING), ("node 18", Severity.ERROR)]
+    assert got == [("React 19", Severity.WARNING), ("node 18+", Severity.ERROR)]
 
 
 def test_pinned_sources(make_repo):
@@ -64,7 +71,7 @@ def test_pinned_sources(make_repo):
 
 
 def test_setup_py_and_no_source(make_repo):
-    root = make_repo({"setup.py": "setup(python_requires='>=3.9')\n", "README.md": "Python 3.8+\n\nGo 1.22\n"})
+    root = make_repo({"setup.py": "setup(python_requires='>=3.9')\n", "README.md": "Python 3.8+\n\nRequires Go 1.22\n"})
     rep = run_versions(root)
     assert [f.claimed for f in rep.findings] == ["python 3.8+"]
     assert rep.per_check["version"].claims == 2 and rep.per_check["version"].verified == 1

@@ -6,7 +6,7 @@ import re
 from collections import defaultdict
 from dataclasses import dataclass
 
-from ..markdown import Doc
+from ..markdown import Doc, heading_at, sentence_at
 from ..model import Finding, Result, Severity
 from ..repo import Repo
 
@@ -25,6 +25,18 @@ HISTORY_RE = re.compile(
     r"\b(dropped|deprecated|removed|no longer|legacy|end[- ]of[- ]life|eol|until|prior to|before|"
     r"used to|migrat\w*|upgrad\w*|back then|previously|was|not supported|unsupported|not yet)\b",
     re.IGNORECASE,
+)
+REQUIRE_RE = re.compile(
+    r"\b(requires?|required|requirements?|needs?|minimum|prerequisites?|at least|install(?:ed|ing)?|supports?|"
+    r"supported|tested|built with|runs? on|environment|toolchain|compatible)\b",
+    re.IGNORECASE,
+)
+REQUIRE_SECTION_RE = re.compile(
+    r"requir|prereq|install|setup|getting started|quick ?start|environment|develop", re.IGNORECASE
+)
+# Feature notes ("only go1.8+", "in case you are using Go 1.8 or later") name versions without stating a requirement.
+CONDITIONAL_RE = re.compile(
+    r"\b(in case|if you|unless|only|unavailable|available (?:since|from|in)|feature)\b", re.IGNORECASE
 )
 NAME = {"python": "python", "go": "go", "golang": "go", "node": "node", "node.js": "node", "nodejs": "node"}
 
@@ -161,6 +173,10 @@ def check_versions(doc: Doc, repo: Repo) -> Result:
         for m in RUNTIME_RE.finditer(line):
             if line[max(0, m.start() - 1) : m.start()] in ("-", "/", "."):
                 continue  # part of a badge URL or a path
+            sentence = sentence_at(doc, no, m.group(0))
+            stated = bool(m.group(4) or REQUIRE_RE.search(sentence) or REQUIRE_SECTION_RE.search(heading_at(doc, no)))
+            if not stated or CONDITIONAL_RE.search(sentence):
+                continue
             minimum = bool(
                 m.group(4)
                 or (m.group(2) or "").strip() in (">=", "≥")

@@ -144,3 +144,27 @@ def _find_tables(doc: Doc) -> None:
             i = j
         else:
             i += 1
+
+
+BLOCK_START = re.compile(r"^\s*([-*+]\s|\d+[.)]\s|#|\||>)")
+
+
+def sentence_at(doc: Doc, no: int, token: str) -> str:
+    """The sentence that mentions the path; sentences often wrap across lines."""
+    lines = doc.lines
+    start = no - 1
+    while start > 0 and lines[start - 1].strip() and not BLOCK_START.match(lines[start]):
+        start -= 1
+    end = no
+    while end < len(lines) and lines[end].strip() and not BLOCK_START.match(lines[end]):
+        end += 1
+    paragraph = " ".join(ln.strip() for ln in lines[start:end])
+    for sentence in re.split(r"(?<=[.!?;:])\s+(?=[A-Z`(])", paragraph):
+        if token in sentence:
+            return sentence
+    return lines[no - 1]
+
+
+def heading_at(doc: Doc, no: int) -> str:
+    """Text of the closest heading above a line."""
+    return next((text for _, text, line in reversed(doc.headings) if line < no), "")

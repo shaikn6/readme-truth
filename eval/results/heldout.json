@@ -800,24 +800,6 @@
    }
   },
   {
-   "check": "command",
-   "file": "docs/DEPLOY.md",
-   "line": 20,
-   "claim": "cp .env.example .env",
-   "claimed": "source file `.env.example` exists",
-   "actual": "missing",
-   "evidence": "git ls-files",
-   "severity": "note",
-   "suggestion": "fix the path or add the step that creates it",
-   "message": "Claimed source file `.env.example` exists; found missing (git ls-files).",
-   "fixable": false,
-   "repo": "finarena",
-   "review": {
-    "verdict": "real",
-    "note": "cp .env.example .env, but the repo has no .env.example"
-   }
-  },
-  {
    "check": "version",
    "file": "README.md",
    "line": 46,
@@ -1052,20 +1034,6 @@
    "repo": "finarena"
   },
   {
-   "check": "command",
-   "file": "docs/DEPLOY.md",
-   "line": 20,
-   "claim": "cp .env.example .env",
-   "claimed": "source file `.env.example` exists",
-   "actual": "missing",
-   "evidence": "git ls-files",
-   "severity": "note",
-   "suggestion": "fix the path or add the step that creates it",
-   "message": "Claimed source file `.env.example` exists; found missing (git ls-files).",
-   "fixable": false,
-   "repo": "finarena"
-  },
-  {
    "check": "version",
    "file": "README.md",
    "line": 46,
@@ -1098,7 +1066,7 @@
   "guard-gap-detector/before": {
    "test-count": 0,
    "coverage": 0,
-   "version": 4,
+   "version": 1,
    "path": 1,
    "command": 3,
    "link": 1,
@@ -1108,7 +1076,7 @@
   "guard-gap-detector/after": {
    "test-count": 0,
    "coverage": 0,
-   "version": 4,
+   "version": 1,
    "path": 1,
    "command": 3,
    "link": 1,
@@ -1138,7 +1106,7 @@
   "llm-safety-auditor/before": {
    "test-count": 4,
    "coverage": 3,
-   "version": 2,
+   "version": 1,
    "path": 58,
    "command": 19,
    "link": 6,
@@ -1148,7 +1116,7 @@
   "llm-safety-auditor/after": {
    "test-count": 4,
    "coverage": 3,
-   "version": 2,
+   "version": 1,
    "path": 60,
    "command": 19,
    "link": 6,
@@ -1158,7 +1126,7 @@
   "mcp-diagram-agent/before": {
    "test-count": 1,
    "coverage": 4,
-   "version": 4,
+   "version": 3,
    "path": 10,
    "command": 5,
    "link": 7,
@@ -1168,7 +1136,7 @@
   "mcp-diagram-agent/after": {
    "test-count": 1,
    "coverage": 4,
-   "version": 4,
+   "version": 3,
    "path": 10,
    "command": 5,
    "link": 7,

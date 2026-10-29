@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from pathlib import PurePosixPath
 
-from ..markdown import Doc
+from ..markdown import Doc, sentence_at
 from ..model import Finding, Result, Severity
 from ..repo import Repo, join, normpath
 from .versions import dependencies
@@ -97,25 +97,6 @@ class PathResolver:
         return any(f.endswith(suffix) for f in self.repo.files) or any(d.endswith(suffix) for d in self.repo.dirs)
 
 
-BLOCK_START = re.compile(r"^\s*([-*+]\s|\d+[.)]\s|#|\||>)")
-
-
-def _context(doc: Doc, no: int, token: str) -> str:
-    """The sentence that mentions the path; sentences often wrap across lines."""
-    lines = doc.lines
-    start = no - 1
-    while start > 0 and lines[start - 1].strip() and not BLOCK_START.match(lines[start]):
-        start -= 1
-    end = no
-    while end < len(lines) and lines[end].strip() and not BLOCK_START.match(lines[end]):
-        end += 1
-    paragraph = " ".join(ln.strip() for ln in lines[start:end])
-    for sentence in re.split(r"(?<=[.!?;:])\s+(?=[A-Z`(])", paragraph):
-        if token in sentence:
-            return sentence
-    return lines[no - 1]
-
-
 def _finding(doc: Doc, repo: Repo, no: int, token: str, where: str, context: str) -> Finding | None:
     ignored = repo.ignored(normpath(token))
     produced = bool(OUTPUT_WORDS.search(context))
@@ -172,12 +153,12 @@ def check_paths(doc: Doc, repo: Repo) -> Result:
     link_lines = {(ln.line, ln.target) for ln in doc.links}
     for text, no in doc.code_spans:
         if (no, text) not in link_lines and not PREFIX_RE.search(doc.lines[no - 1]):
-            consider(no, text, "inline code", _context(doc, no, text))
+            consider(no, text, "inline code", sentence_at(doc, no, text))
     for no, line in doc.prose():
         stripped = re.sub(r"`[^`]*`|\]\([^)]*\)|https?://\S+|<[^>]+>", " ", line)
         for m in PROSE_PATH_RE.finditer(stripped):
             if m.group(2).lower() in EXTENSIONS:
-                consider(no, m.group(1), "prose", _context(doc, no, m.group(1)))
+                consider(no, m.group(1), "prose", sentence_at(doc, no, m.group(1)))
     for fence in doc.fences:
         for no, path in tree_paths(fence.lines, fence.start):
             consider(no, path, "layout tree", "")

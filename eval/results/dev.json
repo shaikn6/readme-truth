@@ -704,7 +704,7 @@
   "on-device-llm-optimizer/before": {
    "test-count": 1,
    "coverage": 1,
-   "version": 4,
+   "version": 3,
    "path": 24,
    "command": 8,
    "link": 1,
@@ -714,7 +714,7 @@
   "on-device-llm-optimizer/after": {
    "test-count": 1,
    "coverage": 1,
-   "version": 4,
+   "version": 3,
    "path": 29,
    "command": 11,
    "link": 1,
@@ -784,7 +784,7 @@
   "llm-gateway/before": {
    "test-count": 5,
    "coverage": 3,
-   "version": 5,
+   "version": 4,
    "path": 25,
    "command": 8,
    "link": 6,
@@ -794,7 +794,7 @@
   "llm-gateway/after": {
    "test-count": 5,
    "coverage": 3,
-   "version": 5,
+   "version": 4,
    "path": 25,
    "command": 8,
    "link": 6,
@@ -844,7 +844,7 @@
   "event-impact-signals/before": {
    "test-count": 0,
    "coverage": 0,
-   "version": 1,
+   "version": 0,
    "path": 11,
    "command": 5,
    "link": 0,
@@ -854,7 +854,7 @@
   "event-impact-signals/after": {
    "test-count": 0,
    "coverage": 0,
-   "version": 1,
+   "version": 0,
    "path": 11,
    "command": 5,
    "link": 0,
@@ -904,7 +904,7 @@
   "finance-agent-crew/before": {
    "test-count": 1,
    "coverage": 2,
-   "version": 3,
+   "version": 2,
    "path": 3,
    "command": 7,
    "link": 3,
@@ -914,7 +914,7 @@
   "finance-agent-crew/after": {
    "test-count": 1,
    "coverage": 2,
-   "version": 3,
+   "version": 2,
    "path": 3,
    "command": 7,
    "link": 3,
