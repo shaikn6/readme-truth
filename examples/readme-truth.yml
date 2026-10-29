@@ -1,0 +1,25 @@
+# Copy to .github/workflows/readme-truth.yml in your repository.
+name: readme-truth
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Optional: give the checker the real test count instead of its static estimate.
+      # - uses: actions/setup-python@v7
+      #   with:
+      #     python-version: "3.12"
+      # - run: pip install -e ".[dev]" && pytest --junitxml=junit.xml
+      - uses: shaikn6/readme-truth@v0.1.0
+        with:
+          args: --fail-on error
+          # args: --fail-on error --test-count-file junit.xml

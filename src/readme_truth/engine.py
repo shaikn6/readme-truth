@@ -93,7 +93,7 @@ def run(root: str | Path, opts: Options | None = None) -> Report:
         doc = parse(repo.read(f), f)
         for name, result in per_check.items():
             r = _one(name, doc, repo, opts, counts, pool)
-            r.findings = [x for x in r.findings if not _suppressed(doc.lines, x.line)]
+            r.findings = [x for x in r.findings if not _suppressed(doc, x.line)]
             result.add(r)
     source = "; ".join(c.source for c in counts) or "none found"
     return Report(str(repo.root), files, per_check, source)
@@ -117,7 +117,13 @@ def _one(name: str, doc: Doc, repo: Repo, opts: Options, counts: list[testcount.
     return check_numbers(doc, repo, pool)
 
 
-def _suppressed(lines: list[str], line: int) -> bool:
-    here = lines[line - 1] if 0 < line <= len(lines) else ""
-    above = lines[line - 2] if 1 < line <= len(lines) + 1 else ""
-    return bool(IGNORE_RE.search(here) or IGNORE_RE.search(above))
+def _suppressed(doc: Doc, line: int) -> bool:
+    """An ignore comment on the line or the line above; above a fence, it covers the whole block."""
+    lines = doc.lines
+
+    def marked(no: int) -> bool:
+        return 0 < no <= len(lines) and bool(IGNORE_RE.search(lines[no - 1]))
+
+    if marked(line) or marked(line - 1):
+        return True
+    return any(f.start <= line <= f.start + len(f.lines) and marked(f.start - 2) for f in doc.fences)

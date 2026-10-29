@@ -9,7 +9,8 @@ FILES = {
     "LICENSE": "MIT License\n\nPermission is hereby granted, free of charge\n",
     "README.md": "# Demo\n\n![t](https://img.shields.io/badge/tests-3%20passing-green)\n\n"
     "Run `pytest`: 3 passed, 97% coverage.\n\nSee [docs](docs/none.md).\n\n"
-    "<!-- readme-truth: ignore -->\nAlso 9 tests.\n\nAnd 8 tests. <!-- readme-truth: ignore -->\n",
+    "<!-- readme-truth: ignore -->\nAlso 9 tests.\n\nAnd 8 tests. <!-- readme-truth: ignore -->\n\n"
+    "<!-- readme-truth: ignore -->\n```text\nexample: 7 tests\n\n6 tests\n```\n",
     "docs/extra.md": "Python 3.8+\n",
     "pyproject.toml": '[project]\nname = "demo"\nrequires-python = ">=3.11"\n',
     "CHANGELOG.md": "Python 3.1\n",
@@ -23,7 +24,7 @@ def test_text_output_and_exit_code(make_repo, capsys):
     assert "README.md:3: error [test-count] Claimed 3 tests; found 2" in out
     assert "README.md:7: error [link]" in out
     assert "9 tests" not in out and "8 tests" not in out
-    assert out.strip().splitlines()[-1].startswith("6 claims found")
+    assert out.strip().splitlines()[-1].startswith("8 claims found")
 
 
 def test_fail_on_levels(make_repo, capsys):

@@ -1,0 +1,39 @@
+name: readme-truth
+description: Check that a README's claims (test counts, versions, paths, commands, links, licence) match the repository.
+author: Nagizaaz Shaik
+branding:
+  icon: check-square
+  color: green
+
+inputs:
+  path:
+    description: Repository root to check.
+    default: "."
+  args:
+    description: >-
+      Extra arguments for `readme-truth check`, for example `--docs --fail-on warning`
+      or `--test-count-file junit.xml`.
+    default: ""
+  python-version:
+    description: Python used to run the checker (3.11 or newer).
+    default: "3.12"
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v7
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Install readme-truth
+      shell: bash
+      run: python -m pip install --quiet "$GITHUB_ACTION_PATH"
+    - name: Check README claims
+      shell: bash
+      # Inputs go through the environment, never straight into the script.
+      env:
+        RT_PATH: ${{ inputs.path }}
+        RT_ARGS: ${{ inputs.args }}
+      run: |
+        # RT_ARGS is split into words on purpose: it carries several flags.
+        # shellcheck disable=SC2086
+        readme-truth check "$RT_PATH" --format github $RT_ARGS
