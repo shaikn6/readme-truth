@@ -214,15 +214,25 @@ def check_test_counts(doc: Doc, repo: Repo, counts: list[Count]) -> Result:
                 line=cl.line,
                 claim=cl.text,
                 claimed=f"{cl.value}{'+' if cl.approx == 'min' else ''} {noun}{scope}",
-                actual=f"{actual}{'' if c.exact else ' (estimate)'}",
+                actual=f"{actual}{'' if c.exact else (' (lower bound)' if c.lower_bound else ' (estimate)')}",
                 evidence=c.source,
                 severity=sev,
-                suggestion=fixed.strip() if edits else f"update the count to {actual}",
+                suggestion=fixed.strip() if edits else _count_hint(actual, c),
                 edits=edits,
             )
         )
     res.findings.extend(_contradictions(doc, claims, counts))
     return res
+
+
+def _count_hint(actual: int, c: Count) -> str:
+    """What to write instead: the number if it is exact, otherwise how to get the real one."""
+    if c.lower_bound and not c.exact:
+        return (
+            f"the real count is at least {actual}: run `pytest --collect-only -q` "
+            "(or your runner's equivalent) and use that number"
+        )
+    return f"update the count to {actual}"
 
 
 def _contradictions(doc: Doc, claims: list[Claim], counts: list[Count]) -> list[Finding]:

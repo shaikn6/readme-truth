@@ -56,6 +56,9 @@ def test_lower_bound_and_estimates(make_repo):
     )
     f = checks(run(root2, Options(select={"test-count"})), "test-count")
     assert len(f) == 1 and f[0].severity == Severity.ERROR and not f[0].edits
+    # A lower bound must not be offered as the corrected count: the real number is higher.
+    assert "at least 7" in f[0].suggestion and "collect" in f[0].suggestion
+    assert "lower bound" in f[0].actual
 
 
 def test_mixed_go_and_python(make_repo):
