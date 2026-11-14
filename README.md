@@ -1,5 +1,7 @@
 # readme-truth
 
+> **Catches the lie in your README: test counts, versions, commands, links and licence checked against the actual repo.**
+
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![Tests](https://img.shields.io/badge/tests-52%20passing-brightgreen)
