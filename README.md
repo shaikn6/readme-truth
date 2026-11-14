@@ -207,3 +207,6 @@ See [CHANGELOG.md](CHANGELOG.md) for releases and [SECURITY.md](SECURITY.md) to 
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+---
+<sub>Part of [Nagizaaz Shaik's open-source work](https://github.com/shaikn6) · [all repositories](https://github.com/shaikn6?tab=repositories)</sub>
