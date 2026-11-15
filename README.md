@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
-![Tests](https://img.shields.io/badge/tests-52%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-58%20passing-brightgreen)
 
 <!-- readme-truth: ignore -->
 A README makes claims: "424 tests", "Python 3.11+", "run `make train`", "see `docs/setup.md`", "MIT licensed",
@@ -25,9 +25,10 @@ also its test set: see [Results](#results).
 
 ## Quickstart
 
-From a checkout of this repository (about a minute):
+Clone and install (about a minute):
 
 ```bash
+git clone https://github.com/shaikn6/readme-truth
 cd readme-truth
 python3 -m venv .venv && . .venv/bin/activate
 pip install .
@@ -197,7 +198,7 @@ reported a correct lower bound.
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
 pip install -r requirements-dev.txt -e .
-pytest --cov                      # 52 tests; CI fails below 90% coverage
+pytest --cov                      # 58 tests; CI fails below 90% coverage
 ruff check src tests eval && ruff format --check src tests eval
 readme-truth check . --docs --fail-on warning
 ```
