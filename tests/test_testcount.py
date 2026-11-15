@@ -143,3 +143,91 @@ def test_collect_runs_pytest(make_repo):
     root = make_repo({"tests/test_a.py": "import pytest\n@pytest.mark.parametrize('x', [1, 2])\ndef test_a(x): pass\n"})
     c = collect(Repo(root))
     assert c is not None and c.tests == 2 and c.source == "pytest --collect-only"
+
+
+def test_pytest_length_evaluator_literal_forms(make_repo):
+    # Each file exercises one branch of the static length evaluator (range, list(),
+    # comprehension, name + binop, dict, starred). None of this runs the tests.
+    root = make_repo(
+        {
+            "pyproject.toml": '[tool.pytest.ini_options]\ntestpaths = ["tests"]\n',
+            "tests/test_range.py": """
+                import pytest
+                @pytest.mark.parametrize("x", range(3))
+                def test_r(x): pass
+            """,
+            "tests/test_listcall.py": """
+                import pytest
+                @pytest.mark.parametrize("x", list(range(4)))
+                def test_l(x): pass
+            """,
+            "tests/test_comp.py": """
+                import pytest
+                @pytest.mark.parametrize("x", [i for i in range(5)])
+                def test_c(x): pass
+            """,
+            "tests/test_binop.py": """
+                import pytest
+                CASES = [1, 2]
+                @pytest.mark.parametrize("x", CASES + [3, 4])
+                def test_b(x): pass
+            """,
+            "tests/test_dict.py": """
+                import pytest
+                @pytest.mark.parametrize("x", {"a": 1, "b": 2})
+                def test_d(x): pass
+            """,
+            "tests/test_starred.py": """
+                import pytest
+                CASES = [1, 2]
+                @pytest.mark.parametrize("x", [*CASES, 9])
+                def test_s(x): pass
+            """,
+        }
+    )
+    c = static_pytest(Repo(root))
+    assert c.exact
+    assert c.per_path["tests/test_range.py"] == 3
+    assert c.per_path["tests/test_listcall.py"] == 4
+    assert c.per_path["tests/test_comp.py"] == 5
+    assert c.per_path["tests/test_binop.py"] == 4
+    assert c.per_path["tests/test_dict.py"] == 2
+    assert c.per_path["tests/test_starred.py"] == 3
+    assert c.tests == 21
+
+
+def test_pytest_module_pytestmark_deselected(make_repo):
+    root = make_repo(
+        {
+            "pyproject.toml": '[tool.pytest.ini_options]\ntestpaths = ["tests"]\naddopts = "-m \'not slow\'"\n',
+            "tests/test_mod.py": """
+                import pytest
+                pytestmark = pytest.mark.slow
+                def test_a(): pass
+                def test_b(): pass
+            """,
+        }
+    )
+    c = static_pytest(Repo(root))
+    assert c.per_path["tests/test_mod.py"] == 0
+    assert c.tests == 0
+
+
+def test_pytest_dunder_test_false_and_nested_class(make_repo):
+    root = make_repo(
+        {
+            "pyproject.toml": '[tool.pytest.ini_options]\ntestpaths = ["tests"]\n',
+            "tests/test_cls.py": """
+                class TestOptedOut:
+                    __test__ = False
+                    def test_ignored(self): pass
+                class TestOuter:
+                    def test_a(self): pass
+                    class TestInner:
+                        def test_b(self): pass
+            """,
+        }
+    )
+    c = static_pytest(Repo(root))
+    # TestOptedOut is skipped; TestOuter contributes test_a plus the nested TestInner's test_b.
+    assert c.per_path["tests/test_cls.py"] == 2
