@@ -13,3 +13,5 @@ First version.
 - Composite GitHub Action (`action.yml`) and an example workflow.
 - Evaluation against a hand audit of 22 repositories, with a dev/held-out split and three third-party sets
   (see `eval/README.md`).
+- Fix: a test-count claim whose sentence names several test files is compared with the sum of those files,
+  not with only one of them.

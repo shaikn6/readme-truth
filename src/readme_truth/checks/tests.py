@@ -9,7 +9,7 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
-from ..markdown import Doc
+from ..markdown import Doc, sentence_at
 from ..model import Edit, Finding, Result, Severity
 from ..repo import Repo
 from ..testcount import Count
@@ -93,16 +93,18 @@ def _lang(line: str, pos: int) -> str:
 def _scope(line: str, counts: list[Count]) -> list[str] | None:
     """Test files a claim is limited to; None when it names a path we cannot tie to tests."""
     all_files = {f for c in counts for f in c.per_path}
+    scope: list[str] = []
     for m in PATH_RE.finditer(line):
         p = m.group(0).strip("./") if not m.group(0).endswith("/") else m.group(0).strip("./") + "/"
         if not p or "://" in line[max(0, m.start() - 8) : m.start()]:
             continue
         if p in all_files:
-            return [p]
+            scope.append(p)
+            continue
         under = [f for f in all_files if f.startswith(p.rstrip("/") + "/")]
         if under and len(under) < len(all_files):
-            return under
-    return []
+            scope.extend(sorted(under))
+    return list(dict.fromkeys(scope))
 
 
 def find_claims(doc: Doc, counts: list[Count]) -> list[Claim]:
@@ -110,7 +112,9 @@ def find_claims(doc: Doc, counts: list[Count]) -> list[Claim]:
     for no, line in enumerate(doc.lines, 1):
         # Output of a failing run ("1 failed, 435 passed") illustrates an error, it does not size the suite.
         if not SUBSET_CONTEXT.search(line) and not FAILED_RUN_RE.search(line):
-            claims += _line_claims(no, line, counts)
+            for claim in _line_claims(no, line, counts):
+                claim.scope = _scope(sentence_at(doc, no, claim.text), counts) or []
+                claims.append(claim)
     return [c for c in claims if c.value >= 2]
 
 
