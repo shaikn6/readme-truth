@@ -9,6 +9,28 @@ TESTS = {
 }
 
 
+def test_count_scoped_to_multiple_named_files(make_repo):
+    root = make_repo(
+        {
+            "abstain/test_synthetic.py": "".join(f"def test_{i}(): pass\n" for i in range(17)),
+            "abstain/test_analysis.py": "".join(f"def test_{i}(): pass\n" for i in range(7)),
+            "README.md": "Tests: `pytest -q` runs the full suite (`abstain/test_synthetic.py` +\n"
+            "`abstain/test_analysis.py`); locally **24 tests, 22 pass and 2 skip**",
+        }
+    )
+    rep = run(root, Options(select={"test-count"}))
+    assert rep.findings == []
+    assert rep.per_check["test-count"].verified == 1
+
+
+def test_count_still_scoped_to_single_named_file(make_repo):
+    root = make_repo({**TESTS, "README.md": "`tests/test_a.py` holds 4 tests.\n"})
+    found = checks(run(root, Options(select={"test-count"})), "test-count")
+    assert len(found) == 1
+    assert found[0].claimed == "4 tests in tests/test_a.py"
+    assert found[0].actual == "3"
+
+
 def test_test_count_claims(make_repo):
     root = make_repo(
         {
