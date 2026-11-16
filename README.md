@@ -17,7 +17,8 @@ or a GitHub Action.
 ## Why
 
 A hand audit of 22 public repositories in October 2026 (clone, follow the quickstart, run the tests,
-compare every claim) found that 15 had READMEs that no longer matched the code. The drift included test
+compare every claim) found 76 discrepancies across 18 of them (all listed in
+[`eval/labels.py`](eval/labels.py)). The drift included test
 counts left behind by later PRs, a badge and a paragraph quoting different test counts, a Go minimum older
 than `go.mod`, a test command that needed an undeclared plugin, a link to a gitignored directory, and a
 framework version one major behind `package.json`. These are the claims this tool checks. The audit is
