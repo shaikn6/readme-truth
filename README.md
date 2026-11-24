@@ -2,6 +2,7 @@
 
 > **Catches the lie in your README: test counts, versions, commands, links and licence checked against the actual repo.**
 
+[![CI](https://github.com/shaikn6/readme-truth/actions/workflows/ci.yml/badge.svg)](https://github.com/shaikn6/readme-truth/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![Tests](https://img.shields.io/badge/tests-60%20passing-brightgreen)
